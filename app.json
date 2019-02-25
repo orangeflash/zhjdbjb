@@ -51,7 +51,7 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "",
     "navigationBarTitleText": "",
-    "navigationBarTextStyle": "#fff"
+    "navigationBarTextStyle": "white"
   },
   "permission": {
       "scope.userLocation": {

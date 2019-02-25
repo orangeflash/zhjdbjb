@@ -213,6 +213,7 @@
         <text>〉</text>
       </view>
       <view class='order_info' >下单时间：{{item.time}}</view>
+      <view wx:if="{{item.count&&item.count!=''}}" class='order_info' >该用户第{{item.count}}次预定</view>
       <view class='order_info' >房型：{{item.room_type}}</view>
       <view class='order_info'>入住人：{{item.name}}</view>
       <view class='order_info'>联系电话：{{item.tel}}</view>
