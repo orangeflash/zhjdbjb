@@ -1,0 +1,264 @@
+.home{
+  padding-bottom: 90rpx;
+}
+.lheader{
+  width: 100%;
+  background-color: #182E8F;
+  padding: 30rpx 0rpx 90rpx 0;
+  color: white;
+  font-size: 34rpx;
+}
+.combination{
+  width: 90%;
+  height: 200rpx;
+  background: #fff;
+  bottom:-130rpx;
+  left: 5%;
+  display: flex;
+  border-radius: 20rpx;
+  z-index: 5000000;
+}
+.combination>view{
+  flex: 3;
+  font-size: 28rpx;
+  color: #666;
+  /* background: orange; */
+}
+.combination>view view{
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+}
+.combination>view view:nth-child(1){
+  margin-top: 30rpx;
+}
+.hydj{
+  border-radius: 30rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150rpx;
+  color: #ed5424;
+  margin-top: 15rpx;
+  padding: 4rpx 5rpx;
+   background: #000;
+}
+.hydj text{
+  font-size: 20rpx;
+  color: #FFDC6F
+}
+.hydj image{
+  width: 25rpx;
+  height: 25rpx;
+  margin-right: 7rpx;
+}
+.logsimg{
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3rpx solid #fff;
+  /* margin-left: 50rpx; */
+  margin-right: 30rpx;
+}
+.hjifen{
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  right: 0rpx;
+  top: 20rpx;
+  padding: 7rpx;
+  /* border-radius: 50rpx; */
+  border-top-left-radius: 50rpx;
+  border-bottom-left-radius: 50rpx;
+  width: 270rpx;
+  z-index: 3;
+  font-size: 28rpx;
+}
+.hjifenimg{
+  width: 45rpx;
+  height: 45rpx;
+  background-color: pink;
+  border-radius: 50%;
+}
+.hright{
+  width: 20rpx;
+  height: 30rpx;
+  margin-right: 25rpx;
+}
+.logs{
+  background-color: white;
+  padding: 30rpx;
+  font-size: 34rpx;
+}
+.logguimg{
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 15rpx;
+}
+.hguiright{
+  width: 20rpx;
+  height: 30rpx;
+  margin-left: 15rpx;
+}
+.lorder{
+  background-color: white;
+  margin-top: 20rpx;
+  padding: 20rpx 0rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #666;
+}
+.lorder>flex3{
+  width: 25%;
+}
+.lorderimg{
+  width: 60rpx;
+  height: 60rpx;
+  margin-bottom: 20rpx;
+  /* background-color: #eee; */
+}
+.logfont1{
+  color: #999;
+  font-size: 28rpx;
+}
+
+.lbanner{
+  background-color: white;
+  margin-top: 20rpx;
+  padding: 0rpx 20rpx;
+}
+.lbannerimg{
+  width: 20rpx;
+  height: 30rpx;
+}
+.lbanlist{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30rpx 20rpx;
+  border-bottom: 1rpx solid #eee;
+  font-size: 30rpx;
+}
+.lbanlist:last-child{
+  border: none;
+}
+.lbanlist button{
+  background: none;
+  width: 100%;
+  height: 100%;
+  z-index: 100000000000;
+  margin: 0;
+  padding: 0;
+}
+.lbanlist button::after{
+  border: none;
+}
+
+
+
+
+
+
+.foot{
+  position: fixed;
+  z-index: 100000000000000000;
+  bottom: 0rpx;
+  left: 0rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-top: 1rpx solid #eee;
+  background-color: white;
+  padding: 15rpx 0rpx 10rpx;
+  font-size: 22rpx;
+}
+.footbox{
+  width: 50%;
+}
+.footban{
+  width: 100%;
+  height: 130rpx;
+}
+.footbox>image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-bottom: 10rpx;
+}
+.footfont1{
+  color: #182E8F;
+}
+
+.member_info{
+  width: 100%;
+  height: 150rpx;
+  color: #fff;
+}
+.member_info swiper{
+  width: 100%;
+  height: 100%;
+}
+.m_info{
+  width: 25%;
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+.m_info image{
+  width: 80rpx;
+  height: 80rpx;
+  background: red;
+  display: block;
+  margin: 20rpx auto 0;
+}
+.m_info view{
+  width: 100%;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+}
+
+
+
+
+
+.fixed{
+  overflow: hidden;
+}
+.fixed>view:nth-child(1){
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background: #000;
+  opacity: .5;
+}
+.authorization{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 50000000;
+}
+.authorization>view:nth-child(2){
+  width: 70%;
+  height: 400rpx;
+  background: #fff;
+  border-radius: 15rpx;
+  text-align: center;
+}
+.authorization>view icon{
+  margin-top: 60rpx;
+  margin-bottom: 50rpx;
+}
+.authorization button{
+  width: 60%;
+  height: 80rpx;
+  background: #09BB07;
+  color: #fff;
+  margin-top: 30rpx;
+  font-size: 28rpx;
+}
+.authorization button::after{
+  border: none;
+}

@@ -1,0 +1,143 @@
+/* pages/jifen/jifen.wxss */
+.home{
+  margin-bottom: 30rpx;
+}
+.jifen{
+  height: 400rpx;
+  /* background-color: pink; */
+  overflow: hidden;
+}
+.jifen image{
+  width: 100%;
+  height: 100%;
+}
+.jifen swiper{
+  width: 100%;
+  height: 100%;
+}
+.jflist{
+  background-color: white;
+  padding: 25rpx 0rpx;
+}
+.jflistbox{
+  width: 20%;
+  height: 140rpx;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 26rpx;
+}
+.jflistbox>view{
+  text-align: center;
+  line-height: 60rpx;
+  background: #fff;
+}
+.jflistimg{
+  width: 80rpx;
+  height: 80rpx;
+  /* border: 1rpx solid #333; */
+  /* background-color: #abcdef; */
+  border-radius: 20rpx;
+  display: block;
+  margin: 10rpx auto 0;
+}
+.jfbanner{
+  border-top: 1rpx solid #eee;
+  background-color: white;
+}
+.jftitle{
+  font-weight: bold;
+  font-size: 36rpx;
+  padding: 15rpx 0rpx;
+  text-align: center;
+}
+.jfgoods{
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 12rpx;
+}
+.jfgoodsbox{
+  border: 1rpx solid #eee;
+  width: 48%;
+  margin-right: 1.5%;
+  margin-bottom: 10rpx;
+  box-sizing: border-box;
+}
+.jfgoodsimg{
+  width: 100%;
+  height: 350rpx;
+  /* background-color: pink; */
+  border-bottom: 1rpx solid #eee;
+}
+.jfgoodstop{
+  padding: 10rpx 10rpx 20rpx;
+}
+.jflabel{
+  color: white;
+  background-color: #F14949;
+  padding: 0rpx 8rpx;
+  width: 50rpx;
+  border-radius: 6rpx;
+  font-size: 22rpx;
+  margin-right: 15rpx;
+}
+.jflabel2{
+  color: white;
+  background-color: #A883FA;
+  padding: 0rpx 8rpx;
+  width: 50rpx;
+  border-radius: 6rpx;
+  font-size: 22rpx;
+  margin-right: 15rpx;
+}
+.jfname{
+  width: 260rpx;
+  display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 1;
+	overflow: hidden;
+}
+.goodsfont1{
+  font-weight: bold;
+  color: #F14949;
+  font-size: 34rpx;
+}
+.goodsfont2{
+  font-size: 30rpx;
+  color: #F14949;
+}
+.goodsfont3{
+  color: #999;
+  text-decoration: line-through;
+}
+.goodsmoney{
+  margin-top: 10rpx;
+}
+.jffoot{
+  color: #999;
+  padding: 10rpx 0rpx 30rpx;
+  text-align: center;
+}
+.score_bottom{
+  width: 100%;
+  height: 100rpx;
+  background: #fff;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+}
+.score_bottom>view{
+  flex: 3;
+  text-align: center;
+  color: #666;
+}
+.score_bottom>view image{
+  width: 50rpx;
+  height: 50rpx;
+  margin: 0 auto;
+}
+.score_bottom>view view{
+  width: 100%;
+  height: 30rpx;
+  line-height: 30rpx;
+  font-size: 24rpx;
+}

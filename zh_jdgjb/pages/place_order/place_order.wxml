@@ -1,0 +1,189 @@
+<form bindsubmit="formSubmit" report-submit="true" bindreset="formReset">
+  <view class="container">
+    <view class='hotel'>
+      <view class='hotel_name'>{{hotel.name}}</view>
+      <view class='hotel_info'>
+        <image class='iconaddress' src='../img/didian.png'></image>
+        <view class='gobyndsingle'>{{hotel.address}}</view>
+      </view>
+      <view class='hotel_info'>
+        <image class='iconaddress' src='../img/fangxing.png'></image>
+        <view>
+          <text>房型：{{room.name}}</text>
+        </view>
+      </view>
+      <view class='hotel_info'>
+        <image class='iconaddress' src='../img/chuang.png'></image>
+        <view>
+          <text>床型：{{room.size}} </text>
+          <text wx:if="{{room.breakfast==1}}"> 早餐：有</text>
+          <text wx:if="{{room.breakfast==2}}"> 早餐：无</text>
+        </view>
+      </view>
+      <view class='hotel_info'>
+        <image class='iconaddress' src='../img/ruzhu.png'></image>
+        <view class='hotel_time'>
+          <view>入住：
+            <text style='color:{{color}}'>{{day1}}</text>
+          </view>
+          <view>离店：
+            <text style='color:{{color}}'>{{day2}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='form_info'>
+      <view class='form_info_child'>
+        <view>房间数</view>
+        <view class='home_num'>
+          <view bindtap='reduce_num'>
+            <image mode='aspectFill' src='../img/jian.png'></image>
+          </view>
+          <view>{{num}}间</view>
+          <view bindtap='add_num'>
+            <image mode='aspectFill' src='../img/jia.png'></image>
+          </view>
+        </view>
+      </view>
+      <view class='form_info_child'>
+        <view>入住人</view>
+        <view>
+          <input name="people" placeholder='请填写入住人姓名' value='{{userInfo.zs_name}}'></input>
+        </view>
+      </view>
+      <view class='form_info_child'>
+        <view>手机号</view>
+        <view>
+          <input name="tel" type="number" placeholder='请填写联系电话' value='{{userInfo.tel}}'></input>
+        </view>
+      </view>
+      <view class='form_info_child' wx:if="{{platform.is_sfz==1}}">
+        <view>身份证号</view>
+        <view>
+          <input name="code" placeholder='请填写您的身份证号'></input>
+        </view>
+      </view>
+      <view class='form_info_child'>
+        <view>选择到店时间</view>
+        <view class='picker'>
+          <picker mode="time" value="{{time}}" bindchange="bindTimeChange">
+            <text>{{time}}</text>
+            <text>〉</text>
+          </picker>
+        </view>
+      </view>
+      <view class='form_info_child' wx:if="{{yj_cost!=0}}">
+        <view>房间押金</view>
+        <view>
+          <input name="phone" type="number" placeholder='+{{yj_price}}' placeholder-style='color:#000' disabled='true'></input>
+        </view>
+      </view>
+      <view class='form_info_child' wx:if="{{discount!=1&&grade!=2}}">
+        <view>会员折扣</view>
+        <view>
+          <input name="phone" type="number" placeholder='-{{reduction_price}}' placeholder-style='color:#000' disabled='true'></input>
+        </view>
+      </view>
+      <view class='form_info_child' bindtap='use_coupon' wx:if="{{coupons.length>0}}">
+        <view>优惠券</view>
+        <view>
+          <input wx:if="{{coupon==0}}" name="phone" type="number" placeholder='选择优惠券' disabled='true'></input>
+          <input wx:else name="phone" type="number" placeholder='选择优惠券' disabled='true' value='-{{coupon}}'></input>
+        </view>
+      </view>
+      <view class='form_info_child' bindtap='use_res_bag' wx:if="{{my_hb.length>0}}">
+        <view>红包</view>
+        <view>
+          <input wx:if="{{red_bag==0}}" name="phone" type="number" placeholder='选择红包' disabled='true'></input>
+          <input wx:else name="phone" type="number" placeholder='选择优惠券' disabled='true' value='-{{red_bag}}'></input>
+        </view>
+      </view>
+      <!-- <view class='form_info_child' style='margin-bottom:140rpx;' bindtap='see_price'>
+        <view>房费详情</view>
+        <view>
+          <input name="phone" type="number" placeholder='点击查看详情' disabled='true'></input>
+        </view>
+      </view> -->
+    </view>
+    <view class='bottom_price'>
+      <view class='rel heji' bindtap='see_price'>
+        <view>
+          <view> 合计</view>
+          <!-- <view>点击查看详情</view> -->
+        </view>
+        <view>￥{{settlement}}</view>
+        <view class='ab ud' style='right:20rpx;'>
+          <text>明细</text>
+          <text style='transform:rotateX(90deg)'>></text>
+        </view>
+      </view>
+      <view>
+       <form bindsubmit="formSubmit1" report-submit="true" bindreset="formReset">
+        <button formType='submit' style='background:{{color}}' class='button1' bindtap='pay_mode'>提交订单</button>
+        </form>
+        <!-- <button formType="submit" style='background:{{color}}'>立即付款</button> -->
+      </view>
+    </view>
+  </view>
+  <view class='see_more udlr' wx:if="{{see_price==true}}">
+    <view wx:for="{{price_infos}}" wx:key="*this">
+      <view>{{item.dateday}}房费</view>
+      <view>{{item.mprice}}元</view>
+    </view>
+    <view wx:if="{{room.yj_cost!=0}}">
+      <view>房间押金</view>
+      <view>+{{yj_price}}</view>
+    </view>
+    <view>
+      <view>应付金额</view>
+      <view>+{{price}}</view>
+    </view>
+    <view>
+      <view>优惠券</view>
+      <view>-{{coupon}}</view>
+    </view>
+    <view wx:if="{{red_bag!=0}}">
+      <view>红包抵扣</view>
+      <view>-{{red_bag}}</view>
+    </view>
+    <view wx:if="{{grade==1}}">
+      <view>会员折扣
+        <text wx:if="{{discount!=1}}">({{discount*10}}折)</text>
+      </view>
+      <view>
+        -{{reduction_price}}
+      </view>
+    </view>
+    <view>
+      <view>实付房费</view>
+      <view>￥{{settlement}}</view>
+    </view>
+  </view>
+  <view class='back' wx:if="{{see_price==true}}" bindtap="see_price"></view>
+  <view class='fixed' wx:if="{{pay_mode==true}}">
+    <view class='ab' bindtap='pay_mode'></view>
+    <view class='pay_mode '>
+      <view>请选择支付方式</view>
+      <view class='rel mode' bindtap='mode1' wx:if="{{hotel.wx_open==1}}">
+        <image mode='aspectFill' src='../img/mode1.png'></image>
+        <text>微信支付</text>
+        <icon class='ab ud' type="{{mode1}}"></icon>
+      </view>
+      <view class='rel mode' bindtap='mode2' wx:if="{{hotel.dd_open==1}}">
+        <image mode='aspectFill' src='../img/mode3.png'></image>
+        <text>到店付</text>
+        <icon class='ab ud' type="{{mode2}}"></icon>
+      </view>
+      <view class='rel mode' bindtap='mode3' wx:if="{{hotel.ye_open==1}}">
+        <image mode='aspectFill' src='../img/mode2.png'></image>
+        <text>余额支付</text>
+        <icon class='ab ud' type="{{mode3}}"></icon>
+      </view>
+      <view style='background:{{color}}'>
+       <button class='button2' formType='submit' wx:if="{{pay_num==1}}">{{refrer_to}}</button>
+          <button class='button2' wx:else>{{refrer_to}}</button>
+       
+      </view>
+    </view>
+  </view>
+</form>

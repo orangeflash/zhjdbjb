@@ -1,0 +1,308 @@
+page {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  padding-bottom: 100rpx;
+}
+
+.hotel {
+  width: 100%;
+  height: 350rpx;
+  background: #fff;
+}
+
+.hotel>view {
+  width: 95%;
+  margin-left: 5%;
+}
+
+.hotel_name {
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 35rpx;
+  color: #000;
+}
+
+.hotel_info {
+  height: 60rpx;
+  line-height: 55 rpx;
+  font-size: 28rpx;
+  color: #666;
+}
+
+.hotel_info image {
+  width: 30rpx;
+  height: 35rpx;
+  display: block;
+  float: left;
+  padding: 5rpx 0 0 0;
+}
+
+.hotel_info view {
+  float: left;
+  width: 90%;
+  text-indent: 8rpx;
+}
+
+.hotel_time {
+  overflow: hidden;
+}
+
+.hotel_time>view {
+  width: 40%;
+  display: inline-block;
+}
+
+.hotel_time>view text {
+  color: #182e8f;
+}
+
+.form_info {
+  width: 100%;
+  height: auto;
+  background: #fff;
+  margin-top: 20rpx;
+}
+
+.form_info>view {
+  width: 95%;
+  margin-left: 5%;
+}
+
+.form_info_child {
+  height: 100rpx;
+  line-height: 100rpx;
+  border-bottom: 2rpx solid #f9f9f9;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.form_info_child>view {
+  float: left;
+}
+
+.form_info_child>view:nth-child(1) {
+  width: 30%;
+  color: #777;
+}
+
+.form_info_child>view:nth-child(2) {
+  width: 70%;
+}
+
+.form_info_child>view input {
+  width: 100%;
+  height: 60rpx;
+  margin-top: 20rpx;
+}
+
+.home_num>view:nth-child(1) {
+  width: 30%;
+  height: 100%;
+}
+
+.home_num>view:nth-child(2) {
+  width: 40%;
+  height: 100%;
+}
+
+.home_num>view:nth-child(3) {
+  width: 30%;
+  height: 100%;
+}
+
+.home_num>view image {
+  width: 45rpx;
+  height: 45rpx;
+  padding: 30rpx 0 0 0;
+}
+
+.home_num>view {
+  float: left;
+}
+
+.bottom_price {
+  width: 100%;
+  height: 120rpx;
+  /* background: orange; */
+  position: fixed;
+  z-index: 1000;
+  bottom: 0;
+  left: 0;
+}
+
+.bottom_price>view {
+  float: left;
+  height: 100%;
+  line-height: 120rpx;
+}
+
+.heji>view:nth-child(1){
+  text-align: left;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 20rpx 0 40rpx;
+}
+.heji>view:nth-child(2){
+  text-align: left;
+  display: inline-block;
+  vertical-align: middle;
+}
+.bottom_price>view view:nth-child(2){
+  font-size: 40rpx;
+}
+.bottom_price>view:nth-child(1) {
+  width: 60%;
+  background: #fff;
+}
+
+.bottom_price>view:nth-child(2) {
+  width: 40%;
+  text-align: center;
+  color: #fff;
+  font-size: 35rpx;
+}
+/* 
+.bottom_price>view text {
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+  text-align: center;
+}
+
+.bottom_price>view text:nth-child(1) {
+  font-size: 26rpx;
+  width: 15%;
+  margin-left: 20%;
+}
+
+.bottom_price>view text:nth-child(2) {
+  font-size: 40rpx;
+  width: 50%;
+} */
+
+.picker text {
+  display: inline-block;
+  width: 45%;
+  height: 100%;
+}
+
+.picker text:last-child {
+  text-align: right;
+}
+
+.button1 {
+  width: 100%;
+  height: 100%;
+  background: none;
+  line-height: 120rpx;
+  display: inline-block;
+  border-radius: 0;
+  color: #fff;
+  font-size: 35rpx;
+}
+.button2 {
+  width: 100%;
+  height: 100%;
+  background: none;
+  line-height: 50rpx;
+  display: inline-block;
+  border-radius: 0;
+  color: #fff;
+  font-size: 32rpx;
+}
+
+button::after {
+  border: none;
+}
+
+.back {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  top: 0;
+  background: #000;
+  z-index: 1000000;
+}
+
+.see_more {
+  position: fixed;
+  width: 90%;
+  height: auto;
+  max-height: 500rpx;
+  z-index: 1000000000000;
+  border-radius: 10rpx;
+  overflow: hidden;
+  background: #fff;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  /* top: 400rpx; */
+}
+
+.see_more>view {
+  padding: 0 20rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  border-bottom: 2rpx solid #f9f9f9;
+  box-sizing: border-box;
+}
+
+.see_more>view view:nth-child(1) {
+  float: left;
+}
+
+.see_more>view view:nth-child(2) {
+  float: right;
+}
+.fixed{
+ 
+}
+.fixed>view:nth-child(1){
+  background: #000;
+  opacity: .5;
+}
+.pay_mode{
+  width: 80%;
+  height: auto;
+   overflow: hidden;
+   background: #fff;
+  margin-top: 45%;
+  border-radius: 15rpx;
+  margin-left: 10%;
+  z-index: 50000000000;
+  position: relative;
+}
+.pay_mode>view:nth-child(1){
+  text-align: center;
+  background: #e5e5e5;
+  color: #333;
+  padding: 20rpx 0;
+}
+.pay_mode>view:last-child{
+  text-align: center;
+  color: #fff;
+  padding: 15rpx 0;
+}
+.mode{
+  padding: 20rpx;
+  border-bottom: 2rpx solid #e5e5e5;
+}
+.pay_mode image{
+  display: inline-block;
+  vertical-align: middle;
+  width: 50rpx;
+  margin-right: 20rpx;
+  height: 50rpx;
+}
+.pay_mode icon{
+  display: inline-block;
+  vertical-align: middle;
+  width: 40rpx;
+  right: 20rpx;
+  height: 40rpx;
+}

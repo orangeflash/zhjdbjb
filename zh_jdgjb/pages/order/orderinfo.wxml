@@ -1,0 +1,116 @@
+<!--pages/order/orderinfo/orderinfo.wxml-->
+<view class='home'>
+  <view class='header' style='background:{{color}}'>
+    <view class='hcontent'>
+      <view class='flex_bet hconbox'>
+        <view>
+          <view class='hcfont1'>{{order_info.seller_name}}</view>
+          <view class='hcfont2 gobyndsingle' bindtap='sele_address'>地址：{{order_info.seller_address}}</view>
+        </view>
+        <image class='ordizhi' src='../../img/more.png'></image>
+      </view>
+
+      <view class='icontent'>
+        <view class='flex3 iconleft'>
+          <view class='iconfont1' style='color:{{color}}'>{{order_info.arrival_time}}</view>
+          <view>入住日期</view>
+        </view>
+        <view class='flex3 iconrit'>
+          <view class='iconfont1' style='color:{{color}}'>{{order_info.departure_time}}</view>
+          <view>退房日期</view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+
+  <view class='osection'>
+    <view class='osecnei'>
+      <view>价格</view>
+      <view class='osecfont1' style='color:{{color}}'>¥{{order_info.total_cost}}</view>
+    </view>
+    <view class='osecnei'>
+      <view>订单状态</view>
+      <view class='osecfont2' wx:if="{{order_info.status==1}}">待付款</view>
+      <view class='osecfont2' wx:if="{{order_info.status==2}}">待接单</view>
+      <view class='osecfont2' wx:if="{{order_info.status==3}}">已取消</view>
+      <view class='osecfont2' wx:if="{{order_info.status==4}}">已完成</view>
+      <view class='osecfont2' wx:if="{{order_info.status==5}}">待评价</view>
+      <view class='osecfont2' wx:if="{{order_info.status==6}}">退款中</view>
+      <view class='osecfont2' wx:if="{{order_info.status==7&&order_info.yj_cost!=0}}">退款成功(包括押金)</view>
+      <view class='osecfont2' wx:if="{{order_info.status==7&&order_info.yj_cost==0}}">退款成功</view>
+      <view class='osecfont2' wx:if="{{order_info.status==8}}">拒绝退款</view>
+      <view class='osecfont2' wx:if="{{order_info.status==9}}">拒绝入住</view>
+      <view class='osecfont2' wx:if="{{order_info.status==10}}">待入住</view>
+    </view>
+    <view class='osecnei'>
+      <view>支付类型</view>
+      <view wx:if="{{order_info.type==1}}">微信支付</view>
+      <view wx:if="{{order_info.type==2}}">余额支付</view>
+      <view wx:if="{{order_info.type==3}}">到店付</view>
+    </view>
+    <view class='osecnei'>
+      <view>房型</view>
+      <view>{{order_info.room_type}}</view>
+    </view>
+    <view class='osecnei'>
+      <view>床型</view>
+      <view>{{order_info.bed_type}}</view>
+    </view>
+    <view class='osecnei'>
+      <view>房间数</view>
+      <view>{{order_info.num}}间</view>
+    </view>
+    <view class='osecnei'>
+      <view>入住天数</view>
+      <view>{{order_info.days}}天</view>
+    </view>
+    <view class='osecnei'>
+      <view>预订人</view>
+      <view>{{order_info.name}}</view>
+    </view>
+    <view class='osecnei'>
+      <view>手机号</view>
+      <view>{{order_info.tel}}</view>
+    </view>
+    <view class='osecnei'>
+      <view>预计到店</view>
+      <view>{{order_info.dd_time}}</view>
+    </view>
+    <view class='osecnei'>
+      <view>订单编号</view>
+      <view>{{order_info.order_no}}</view>
+    </view>
+    <view class='osecnei' wx:if="{{order_info.status==10}}">
+      <view style='line-height:200rpx;'>扫码核销</view>
+      <view>
+        <image style='width:200rpx;height:200rpx;' mode='aspectFill' src='data:image/png;base64,{{bath}}'></image>
+      </view>
+    </view>
+    <view class='osecnei' wx:if="{{order_info.status=='10'}}">
+      <view></view>
+      <view>
+        进店后请向前台出示二维码
+      </view>
+    </view>
+  </view>
+
+  <view class='osecfoot'></view>
+  <view class='orderfoot'>
+    <view class='ofbox' wx:if="{{order_info.status==1}}" bindtap='cancel_order' data-hb_id='{{order_info.hb_id}}' data-id='{{order_info.id}}' data-classify='{{order_info.classify}}'>取消订单</view>
+    <view class='ofbox' bindtap='apply' data-id='{{order_info.id}}' data-type='{{order_info.type}}' wx:if="{{order_info.status==2}}">申请退款</view>
+    <view class='ofbox' bindtap='see_more' wx:if="{{order_info.status==3||order_info.status==4||order_info.status==9}}">查看更多</view>
+    <view class='ofbox' wx:if="{{order_info.status==6}}">待退款</view>
+    <view class='ofbox' wx:if="{{order_info.status==7}}">已退款</view>
+    <view class='ofbox' wx:if="{{order_info.status==8}}">退款被拒绝</view>
+    <view class='ofbox' bindtap='go_eveluate' wx:if="{{order_info.status==5}}">去评价</view>
+    <button class='ofbutton' style='background:{{color}}' bindtap='confirmorder' wx:if="{{order_info.status==1}}">立即付款</button>
+    <button class='ofbutton' style='background:{{color}}' bindtap='order_more' wx:if="{{order_info.status!=1}}">再订一间</button>
+  </view>
+</view>
+<view class='fixed' wx:if="{{code==true}}">
+  <view class='ab' bindtap='code'></view>
+  <view class='code ab udlr'>
+    <image style='width:100%;height:100%' mode='aspectFill' src='data:image/png;base64,{{bath}}'></image>
+  </view>
+</view>

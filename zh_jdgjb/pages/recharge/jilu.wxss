@@ -1,0 +1,20 @@
+/* zh_jdgjb/pages/jifen/scoredetails.wxss */
+.score_detail{
+  padding: 20rpx 20rpx;
+  background: #fff;
+  font-size: 28rpx;
+  color: #666;
+  border-bottom: 2rpx solid #e5e5e5;
+}
+.score_detail>view{
+  display: inline-block;
+  vertical-align: middle;
+}
+.score_detail>view:nth-child(1){
+  text-align: left;
+  width: 80%;
+}
+.score_detail>view:nth-child(2){
+  text-align: right;
+  width: 20%;
+}

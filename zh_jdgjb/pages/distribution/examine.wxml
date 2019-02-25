@@ -1,0 +1,66 @@
+<!--zh_tcwq/pages/distribution/jrhhr.wxml-->
+<form bindsubmit="formSubmit" report-submit='true' bindreset="formReset">
+  <view class="integral">
+    <view class='banner' wx:if="{{img!=''}}">
+      <view class="swiper-container">
+        <!-- <swiper autoplay="true" circular='true' indicator-dots='true' interval="5000" duration="500" class="swiper">
+          <block wx:for="{{lblist}}" wx:key="unique">
+            <swiper-item data-index="{{index}}" bindtap='tzweb'>
+              <image src="{{url}}{{item.logo}}" class="img"></image>
+            </swiper-item>
+          </block>
+        </swiper> -->
+        <view class='swiper'>
+          <image src="{{url}}{{GetFxSet.img2}}" class="img"></image>
+        </view>
+      </view>
+    </view>
+    <view class="banner1">
+      <view class="huanying">欢迎加入
+        <text>{{pt_name}}</text>，请填写申请信息。</view>
+      <view class="bannerbox">
+        <view class="">邀请人</view>
+        <input type="text" value='{{name}}' disabled='true' style='color:#34aaff' placeholder-style="color:#999;" />
+      </view>
+      <view class="bannerbox">
+        <view class="">姓名</view>
+        <input type="text" name='name' placeholder="请填写真实姓名" placeholder-style="color:#999;" />
+      </view>
+      <view class="bannerbox">
+        <view class="">手机号</view>
+        <input type="text" type='number' name='tel' placeholder="请填写手机号码" placeholder-style="color:#999;" />
+      </view>
+      <!-- <view class="read">
+        <checkbox-group name="checkbox">
+          <checkbox style='zoom:80%' color='#ff6161' value="1" />
+        </checkbox-group>
+        <view>我已阅读并同意
+          <text class="readfont" bindtap='lookck'>《合伙人须知》</text>
+        </view>
+      </view> -->
+    </view>
+    <view class="weui-cells__title">合伙人说明</view>
+    <view class='hhr'>
+      <view>
+        <rich-text nodes="{{GetFxSet.instructions}}"></rich-text>
+      </view>
+    </view>
+    <view class="weui-cells__title">合伙人申请协议</view>
+    <view class='hhr'>
+      <view>
+        <rich-text nodes="{{GetFxSet.fx_details}}"></rich-text>
+      </view>
+    </view>
+    <view class="weui-btn-area">
+      <button style='background:{{color}}' formType="submit" class="weui-btn">立即成为合伙人</button>
+    </view>
+  </view>
+</form>
+<!-- <view class="zhezhao" hidden="{{fwxy}}"></view>
+<view class="kcrzxy" hidden="{{fwxy}}">
+  <view class="kcrzxyhd">合伙人须知</view>
+  <scroll-view class="kcrzxybd" scroll-y style="height: 600rpx;">
+    <rich-text nodes="{{fx_details}}" />
+  </scroll-view>
+  <view class="queren" bindtap="queren">确定</view>
+</view>  -->

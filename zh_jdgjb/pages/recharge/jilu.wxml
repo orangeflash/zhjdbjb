@@ -1,0 +1,5 @@
+<view class='score_detail' wx:for="{{score_detail}}" wx:key="*this">
+    <view>{{item.time}}({{item.note}})</view>
+    <view wx:if="{{item.note=='在线充值'||item.note=='订单退款'||item.note=='后台充值'}}">+{{item.cz_money}}</view>
+    <view wx:else>-{{item.cz_money}}</view>
+</view>

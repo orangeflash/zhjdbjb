@@ -1,0 +1,430 @@
+/* pages/content/contentlist.wxss */
+page{
+  background-color: white;
+}
+.header{
+  background-color: #182E8F;
+  height: 300rpx;
+  width: 100%;
+  position: relative;
+}
+.hcontent{
+  background-color: white;
+  width: 80%;
+  padding: 40rpx 30rpx;
+  position: absolute;
+  top: 40rpx;
+  z-index: 5;
+  left: 6.5%;
+  box-shadow: 0rpx 5rpx 5rpx 5rpx #eee;
+  border-radius: 10rpx;
+}
+.hconbox{
+  display: flex;
+}
+.hcfont1{
+  font-size: 36rpx;
+}
+.hcfont2{
+color: #999;
+font-size: 24rpx;
+display: flex;
+margin-top: 5rpx;
+}
+.hcfont3{
+  color: #999;
+  font-size: 24rpx;
+}
+.ordizhi{
+  width: 210rpx;
+  height: 160rpx;
+  border-radius: 6rpx;
+  margin-right: 15rpx;
+}
+.icontent{
+  display: flex;
+  padding-top: 30rpx;
+  font-size: 22rpx;
+  border-top: 1rpx solid #eee;  
+  margin-top: 20rpx;
+  color: #999;
+}
+.iconleft{
+  width: 49.5%;
+  border-right: 1rpx solid #eee;
+  position: relative;
+}
+.iconrit{
+  width: 49.5%;
+}
+.iconfont1{
+  font-size: 28rpx;
+  color: #172A97;
+  margin-bottom: 20rpx;
+}
+.osection{
+  margin-top: 150rpx;
+}
+.iconnum {
+  background-color: #fff;
+  position: absolute;
+  top: 30%;
+  right: -50rpx;
+  width: 100rpx;
+  text-align: center;
+  padding: 10rpx 0rpx;
+  color: #333;
+}
+.conimg{
+  width: 25rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
+}
+
+/* —————————————头部开始————————————— */
+.marry {
+  background-color: white;
+  font-size: 32rpx;
+  padding: 0rpx 20rpx;
+  margin-top:30rpx;
+  border-bottom: 1rpx solid #eee;
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: space-around; */
+  color: #999;
+}
+.proitem {
+  width: 100%;
+  height: 80rpx;
+  padding-top: 40rpx;
+}
+.proitem>view{
+  display: inline-block;
+  vertical-align: middle;
+  width: 33.3%;
+  height: 80rpx;
+  text-align: center;
+}
+.proitem .weuibaron {
+  color: #182E8F;
+  position: relative;
+  border-bottom: 3rpx solid #182E8F;
+}
+
+.roomlist{
+  padding: 20rpx 30rpx;
+}
+.roombox{
+  display: flex;
+  border-bottom: 1rpx solid #eee;
+  padding: 15rpx 0rpx;
+}
+.roomleft{
+  width: 33%;
+  height: 160rpx;
+  /* background-color: pink; */
+  border-radius: 6rpx;
+  margin-right: 2%;
+}
+.roomright{
+  width: 65%;
+}
+.roomtop{
+  width: 100%;
+  font-size: 32rpx;
+}
+.roombot{
+  width: 100%;
+  font-size: 22rpx;
+  color: #999;
+}
+.roomfont1{
+  font-size: 43rpx;
+  color: #182E8F;
+}
+.roomyuding{
+  background-color: #182E8F;
+  color: white;
+  border-radius: 10rpx;
+}
+.roomname{
+  width: 320rpx;
+  display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 1;
+	overflow: hidden;
+}
+.hotel_info{
+  width: 100%;
+  height: auto;
+  background: #fff;
+}
+.hotel_title{
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size:30rpx;
+  text-indent: 30rpx;
+  background: #f9f9f9;
+}
+.info_child{
+   width: 100%;
+}
+.info_child>view{
+  text-indent: 30rpx;
+  padding: 10rpx 0;
+  font-size: 28rpx;
+  color: #666;
+}
+.hotel_service{
+  width: 90%;
+  height: auto;
+  margin: 0 auto 0;
+  padding: 10rpx 0 20rpx 0;
+}
+.hotel_service>view{
+  width: 25%;
+  height: 130rpx;
+  /* border:1rpx solid #ccc; */
+  /* box-sizing: border-box; */
+  display: inline-block;
+  vertical-align: middle;
+}
+.hotel_service>view view:nth-child(1){
+  width: 100%;
+  height: 78rpx;
+  /* background: red; */
+}
+.hotel_service>view view image{
+  width: 50rpx;
+  height: 50rpx;
+}
+.hotel_service>view view:nth-child(2){
+  width: 100%;
+  height: 30rpx;
+  line-height: 30rpx;
+  text-align: center;
+  font-size: 22rpx;
+  color: #666;
+}
+.hotel_policy{
+  width: auto;
+  height: auto;
+  font-size: 22rpx;
+  min-height: 80rpx;
+  line-height: 40rpx;
+  padding: 20rpx 30rpx;
+}
+/*酒店评价  */
+.hotel_evaluate{
+  width: 95%;
+  padding: 20rpx 0;
+  height: auto;
+  margin: 0 auto 0;
+  border-bottom: 2rpx solid #f9f9f9;
+}
+.evaluate_head{
+  width: 100%;
+  height: 100rpx;
+}
+.evaluate_head>view{
+  display: inline-block;
+  vertical-align: middle;
+}
+.evaluate_head>view:nth-child(1){
+  width: 15%;
+  height: 100%;
+}
+.evaluate_head>view image{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  left: 0;
+}
+.user{
+  width: 500rpx;
+}
+.user>view:nth-child(1){
+  font-size: 28rpx;
+}
+.user>view:nth-child(2){
+  font-size: 23rpx;
+  color: #999;
+}
+.evaluate_content{
+  width: 85%;
+  margin-left: 15%;
+  height: auto;
+  padding: 20rpx 0;
+  /* min-height: 100rpx; */
+  /* font-weight: bold; */
+  font-size: 24rpx;
+}
+.evaluate_content>view{
+  width: 33.333%;
+  height: 180rpx;
+  box-sizing: border-box;
+  border-right: 2rpx solid #f9f9f9;
+  margin-top: 4rpx;
+  display: inline-block;
+  vertical-align: middle;
+}
+.evaluate_content>view image{
+  width: 100%;
+  height: 100%;
+}
+.whole_evaluate{
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+  color: #E75119;
+  text-align: center;
+  font-size: 22rpx;
+  background: #f9f9f9;
+}
+/* 注册 */
+.register,.Verification{
+  width: 85%;
+  border-radius: 15rpx;
+  overflow: hidden;
+  height: 420rpx;
+  background: #fff;
+}
+.register>view:nth-child(1){
+  width: 100%;
+  height: 90rpx;
+  line-height: 90rpx;
+  border-bottom: 2rpx solid #f9f9f9;
+}
+.register>view:nth-child(2){
+  padding: 0 20rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  border-bottom: 2rpx solid #f9f9f9;
+}
+.code{
+  padding: 0 20rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  border-bottom: 2rpx solid #f9f9f9;
+}
+.register>view view{
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 90rpx;
+}
+/* .code view:nth-child(1){
+    width: 25%;
+} */
+.code view:nth-child(1){
+    width: 100%;
+}
+.register>view view input{
+  width: 100%;
+  height: 50rpx;
+  left: 0;
+}
+.register button{
+  width: 100%;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 28rpx;
+  color: #fff;
+  bottom: 0;
+  border-radius: 0;
+}
+.register button::after{
+  border: none;
+}
+/*输入验证码  */
+.Verification>view:nth-child(1){
+  width: 100%;
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: center;
+  color: #000;
+  font-size: 32rpx;
+}
+.Verification>view:nth-child(2){
+  text-align: center;
+  margin-top: 20rpx;
+  width: 100%;
+  height: 90rpx;
+  line-height: 90rpx;
+}
+.Verification view text:nth-child(1){
+  color: #777;
+  right: 400rpx;
+}
+.Verification view input:nth-child(2){
+  color: #999;
+  border: 2rpx solid #999;
+  width: 240rpx;
+  height: 50rpx;
+  right: 100rpx;
+  overflow: visible;
+  border-radius: 15rpx;
+  margin-left: 20rpx;
+}
+.Verification view text:nth-child(3){
+  color: #000;
+  display: inline-block;
+  border: 2rpx solid #999;
+  width: 240rpx;
+  height: 50rpx;
+  right: 100rpx;
+  line-height: 50rpx;
+  overflow: visible;
+  border-radius: 15rpx;
+  background: #fff;
+}
+.top_class1{
+  z-index: 500;
+}
+.top_class2{
+  z-index: 6000;
+}
+.Verification_code{
+  width: 100%;
+  height: 120rpx;
+  margin-top: 15rpx;
+  display: flex;
+}
+.Verification_code>view{
+  flex: 6;
+}
+.Verification_code>view view{
+  width: 80rpx;
+  height: 80rpx;
+  border:2rpx solid #999;
+  margin: 0 auto 0;
+  line-height: 80rpx;
+  text-align: center;
+}
+
+.Verification button{
+  width: 100%;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 28rpx;
+  color: #fff;
+  bottom: 0;
+  border-radius: 0;
+}
+.Verification button::after{
+  border: none;
+}
+.users{
+  margin: 0;
+  background: none;
+  line-height: 1;
+  color: #fff;
+  padding: 10rpx 40rpx;
+  font-size: 28rpx;
+
+}
+.users button::after{
+  border: none;
+}
+

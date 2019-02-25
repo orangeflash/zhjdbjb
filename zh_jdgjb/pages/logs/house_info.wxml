@@ -1,0 +1,127 @@
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view>
+    <view class='houser_logo border-bottom' bindtap='choose_logo'>
+      <text>房型大图</text>
+      <image mode='aspectFill' src='{{url}}{{room.logo}}'></image>
+    </view>
+    <view class='houser border-bottom'>
+      <view>
+        房间类型
+      </view>
+      <view class='rel'>
+        <input name='name' class='ab udlr' placeholder='请输入房间类型' value='{{room.name}}'></input>
+      </view>
+    </view>
+    <view class='houser border-bottom' bindtap='maintin' data-select='1'>
+      <view>
+        房价维护
+      </view>
+      <view class='rel'>
+        <input disabled='true' class='ab udlr' placeholder='*房间价格为实时修改             >'></input>
+      </view>
+    </view>
+    <view class='houser border-bottom' bindtap='maintin_num' data-select='2'>
+      <view>
+        房量维护
+      </view>
+      <view class='rel'>
+        <input disabled='true' class='ab udlr' placeholder='*房间数量为实时修改             >'></input>
+      </view>
+    </view>
+    <view class='houser border-bottom'>
+      <view>
+        房间楼层
+      </view>
+      <view class='rel'>
+        <input name='floor' class='ab udlr' placeholder='请输入房间楼层' value='{{room.floor}}'></input>
+      </view>
+    </view>
+    <view class='houser border-bottom'>
+      <view>
+        可住人数
+      </view>
+      <view class='rel'>
+        <input name="people" class='ab udlr' placeholder='请输入房间可住人数' value='{{room.people}}'></input>
+      </view>
+    </view>
+    <view class='houser border-bottom'>
+      <view wx:if="{{checked==false}}">
+        是否开启押金
+      </view>
+      <view wx:else>
+        是否关闭押金
+      </view>
+      <view class='rel'>
+        <switch checked="{{checked}}" bindchange="switchchange" color='{{color}}' class='ab'></switch>
+      </view>
+    </view>
+    <view class='houser border-bottom' wx:if="{{checked==true}}">
+      <view>
+        押金金额
+      </view>
+      <view class='rel'>
+        <input name="yj_cost" class='ab udlr' placeholder='请输入押金金额' value='{{room.yj_cost}}'></input>
+      </view>
+    </view>
+    <view class='houser border-bottom'>
+      <view wx:if="{{check==false}}">
+        下架
+      </view>
+      <view wx:else>
+        上架
+      </view>
+      <view class='rel'>
+        <switch checked="{{check}}" bindchange="switchchanges" color='{{color}}' class='ab'></switch>
+      </view>
+    </view>
+    <!-- <view class='houser'>
+    <view>
+      房间设施
+    </view>
+  </view>
+  <view class='check_group border-bottom'>
+    <checkbox-group  class="checkbox" bindchange="checkboxChange">
+      <label wx:for="{{items}}">
+        <checkbox value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+      </label>
+    </checkbox-group>
+  </view> -->
+    <view class='houser'>
+      <view>
+        房间附图
+      </view>
+    </view>
+    <view class='house_imgs'>
+      <view wx:for="{{imgs}}" class='rel'>
+        <image mode='aspectFill' src='{{url}}{{item}}'></image>
+        <image class='ab' bindtap='delete' data-index='{{index}}' mode='aspectFill' src='../img/delete_img.png'></image>
+      </view>
+      <view>
+        <image mode='aspectFill' bindtap='img_array' src='../img/add.png'></image>
+      </view>
+    </view>
+  </view>
+  <button form-type='submit' style='background:{{color}}'>保存</button>
+  <view class='maintin' wx:if="{{maintin==true}}">
+    <view class='ab' bindtap='maintin'></view>
+    <view class='ab udlr'>
+      <view wx:for="{{price}}">
+        <view>{{item.dateday}}</view>
+        <view>
+          <input bindblur='modify_price' data-index='{{index}}' placeholder='' value="{{item.mprice}}"></input>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='maintin' wx:if="{{maintin_num==true}}">
+    <view class='ab' bindtap='maintin_num'></view>
+    <view class='ab udlr'>
+      <view wx:for="{{room_num}}">
+        <view>{{item.dateday}}</view>
+        <view>
+          <input bindblur='modify_num' data-index='{{index}}' placeholder='' value="{{item.nums}}"></input>
+        </view>
+      </view>
+    </view>
+  </view>
+</form>

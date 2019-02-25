@@ -1,0 +1,61 @@
+{
+  "pages": [
+    "zh_jdgjb/pages/index/index",
+    "zh_jdgjb/pages/hotel_list/hotel_in",
+    "zh_jdgjb/pages/index/search",
+    "zh_jdgjb/pages/recharge/index",
+    "zh_jdgjb/pages/index/link",
+    "zh_jdgjb/pages/hotel_list/hour_room",
+    "zh_jdgjb/pages/hotel_list/hotel_info",
+    "zh_jdgjb/pages/hotel_list/hotel_list",
+    "zh_jdgjb/pages/hotel_list/room_info",
+    "zh_jdgjb/pages/hotel_list/all_comment",
+    "zh_jdgjb/pages/canvas/canvas",
+    "zh_jdgjb/pages/coupon/receive_coupon",
+    "zh_jdgjb/pages/coupon/store_coupon",
+    "zh_jdgjb/pages/coupon/red_bag",
+    "zh_jdgjb/pages/place_order/place_order",
+    "zh_jdgjb/pages/order/orderinfo",
+    "zh_jdgjb/pages/order/order",
+    "zh_jdgjb/pages/order/evaluate",
+    "zh_jdgjb/pages/settled_store/settled_store",
+    "zh_jdgjb/pages/service/service",
+    "zh_jdgjb/pages/login_entry/login_entry",
+    "zh_jdgjb/pages/jifen/jifen",
+    "zh_jdgjb/pages/jifen/jifeninfo",
+    "zh_jdgjb/pages/jifen/exchange",
+    "zh_jdgjb/pages/jifen/scoredetails",
+    "zh_jdgjb/pages/jifen/score_classifation",
+    "zh_jdgjb/pages/logs/Workbench",
+    "zh_jdgjb/pages/logs/house_info",
+    "zh_jdgjb/pages/logs/put_forward",
+    "zh_jdgjb/pages/logs/logs",
+    "zh_jdgjb/pages/logs/member",
+    "zh_jdgjb/pages/logs/search",
+    "zh_jdgjb/pages/logs/order_info",
+    "zh_jdgjb/pages/logs/reply",
+    "zh_jdgjb/pages/logs/record",
+    "zh_jdgjb/pages/register/register",
+    "zh_jdgjb/pages/distribution/examine",
+    "zh_jdgjb/pages/distribution/distribution",
+    "zh_jdgjb/pages/distribution/team",
+    "zh_jdgjb/pages/distribution/detauled",
+    "zh_jdgjb/pages/distribution/commission",
+    "zh_jdgjb/pages/distribution/forward",
+    "zh_jdgjb/pages/distribution/partner",
+    "zh_jdgjb/pages/recharge/recharge",
+    "zh_jdgjb/pages/recharge/jilu",
+    "zh_jdgjb/pages/login"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "#fff"
+  },
+  "permission": {
+      "scope.userLocation": {
+          "desc": "你的位置信息将用于小程序位置接口的效果展示"
+      }
+  }
+}

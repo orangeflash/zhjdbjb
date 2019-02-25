@@ -1,0 +1,92 @@
+/*———————————————————弹框部分样式开始———————————————————  */
+.eject_swiper{
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.swiper{
+  height: 400rpx;
+  width: 100%;
+}
+.swiper image{
+  width: 100%;
+  height: 100%;
+}
+.eject_room{
+  padding: 20rpx 30rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+.eject_room view{
+  line-height: 70rpx;
+}
+.eject_floor text,.eject_type{
+  display: block;
+  width: 100%;
+  font-size: 32rpx;
+  font-weight: 600;
+  word-wrap:break-word;
+}
+.eject_type{
+}
+.seller_info{
+  width: 100%;
+  height: 160rpx;
+}
+.seller_info>view{
+  width: 100%;
+  height: 50%;
+  line-height: 80rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+.seller_info>view view:nth-child(1){
+  width: 10%;
+  height: 100%;
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
+}
+.seller_info>view view:nth-child(2){
+  width: 90%;
+  height: 100%;
+  line-height: 80rpx;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 26rpx;
+}
+.seller_info>view view image{
+  width: 50rpx;
+  height: 45rpx;
+}
+.eject_have{
+  color: #999999;
+  font-size: 24rpx;
+  display: flex;
+}
+.eject_big{
+  /* border-right: 1rpx solid #e5e5e5; */
+  height: 30rpx;
+  line-height: 30rpx;
+  padding-right: 20rpx;
+  margin-right: 20rpx;
+}
+.eject_window{
+  line-height: 30rpx;
+}
+.eject_floor{
+  font-size: 24rpx;
+  color: #333;
+}
+.eject_floor>view{
+  display: inline-block;
+  width: 50%;
+}
+.eject_can{
+  /* display: flex; */
+}
+.eject_font{
+  font-size: 24rpx;
+}
+.eject_none{
+  /* display: none; */
+}
+/*———————————————————弹框部分样式结束———————————————————  */

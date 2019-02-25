@@ -1,0 +1,51 @@
+/* zh_jdgjb/pages/distribution/team.wxss */
+.head{
+  width: 100%;
+  display: flex;
+  height: 100rpx;
+  border-bottom: 2rpx solid #e5e5e5;
+}
+.head>view{
+  flex: 3;
+  height: 100%;
+  line-height: 100rpx;
+  text-align: center;
+}
+.head .border{
+  border-bottom: 2rpx solid orangered;
+}
+.body{
+  padding: 20rpx;
+}
+.body>view{
+  height: 150rpx;
+  border: 2rpx solid #e5e5e5;
+}
+.body>view image{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  display: block;
+  float: left;
+  margin: 25rpx auto;
+  margin-left: 30rpx;
+}
+.body>view view:nth-child(2){
+  width: 200rpx;
+  margin-left: 150rpx;
+  padding: 20rpx 0 0 0;
+}
+.body>view view:nth-child(3){
+  width: 400rpx;
+  margin-left: 150rpx;
+  padding: 20rpx 0 0 0;
+}
+
+.body>view view:nth-child(4){
+  width: 200rpx;
+  right: 0;
+  top: 0;
+  height: 100%;
+  line-height: 150rpx;
+  font-size: 22rpx;
+}

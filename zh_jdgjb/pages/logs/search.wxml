@@ -1,0 +1,16 @@
+<view class="container">
+    <view class='search'>
+         <view class='udlr'>
+            <input bindinput='search_hotel' placeholder='输入{{platform.jd_custom}}名/关键字，搜索你想住的{{platform.jd_custom}}' placeholder-style='color:#777;font-size:26rpx'></input>
+         </view>  
+    </view>
+    <view class='search_result'>
+        <view class='result' wx:for="{{hotel}}" wx:if="{{hotel!=''}}" bindtap='search_result' data-id='{{item.id}}'>
+           {{item.name}}
+        </view>
+        <view class='none_result rel' wx:if="{{hotel==''}}">
+            <image mode='aspectFit' src='../img/none_search.png' class='ab lr'></image>
+            <view class='ab'>搜索不到您要找的{{platform.jd_custom}}哦</view>
+        </view>
+    </view>
+</view>

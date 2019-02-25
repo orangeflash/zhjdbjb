@@ -1,0 +1,282 @@
+<!-----------------------工作台  -->
+<view class='workbench' wx:if="{{index==0}}">
+  <!--头部  -->
+  <view class='seller_info' style='background:{{color}}'>
+    <view class='rel'>
+      <image class='ab udlr' mode='aspectFill' src='{{url}}{{store_info.seller_logo}}'></image>
+    </view>
+    <view>
+      {{store_info.seller_name}}
+    </view>
+    <view class='info_index'>
+      <view>
+        <view>
+          <text>{{store_info.jrdd}}</text>
+          <text>个</text>
+        </view>
+        <view>今日订单</view>
+      </view>
+      <view>
+        <view>
+          <text>{{store_info.jrxse}}</text>
+          <text>元</text>
+        </view>
+        <view>今日消费金额</view>
+      </view>
+      <view>
+        <view>
+          <text>{{store_info.byxse}}</text>
+          <text>元</text>
+        </view>
+        <view>月销售额</view>
+      </view>
+      <view>
+        <view>
+          <text>{{store_info.ll_num}}</text>
+          <text>次</text>
+        </view>
+        <view>总浏览量</view>
+      </view>
+    </view>
+  </view>
+  <!--主体  -->
+  <view class='body'>
+    <view class='body_head'>订单管理</view>
+    <view class='order_manage'>
+      <view bindtap='wait_payment'>
+        <view class='rel'>
+          <image class='ab lr' mode='aspectFill' src='../img/workbench/waiting.png'></image>
+        </view>
+        <view>
+          待处理
+        </view>
+        <view>
+          <text>{{store_info.dzf}}</text>
+          <text>单</text>
+        </view>
+      </view>
+      <view bindtap='already'>
+        <view class='rel'>
+          <image class='ab lr' mode='aspectFill' src='../img/workbench/work.png'></image>
+        </view>
+        <view>
+          已完成
+        </view>
+        <view>
+          <text>{{store_info.ywc}}</text>
+          <text>单</text>
+        </view>
+      </view>
+      <view bindtap='refund'>
+        <view class='rel'>
+          <image class='ab lr' mode='aspectFill' src='../img/workbench/refund.png'></image>
+        </view>
+        <view>
+          退款订单
+        </view>
+        <view>
+          <text>{{store_info.ytk}}</text>
+          <text>单</text>
+        </view>
+      </view>
+    </view>
+    <view class='body_head'>财务管理</view>
+    <view class='finance'>
+      <view>
+        <view class='rel'>
+          <image class='ab lr' mode='aspectFill' src='../img/workbench/today.png'></image>
+        </view>
+        <view>今日营业额</view>
+        <view>{{store_info.jrxse}}</view>
+      </view>
+      <view>
+        <view class='rel'>
+          <image class='ab lr' mode='aspectFill' src='../img/workbench/zuor.png'></image>
+        </view>
+        <view>昨日营业额</view>
+        <view>{{store_info.zrxse}}</view>
+      </view>
+      <view>
+        <view class='rel'>
+          <image class='ab lr' mode='aspectFill' src='../img/workbench/zhongyingye@2.png'></image>
+        </view>
+        <view style='border:none;'>总营业额</view>
+        <view>{{store_info.zxse}}</view>
+      </view>
+       <view>
+        <view class='rel' bindtap='put_forward'>
+          <image class='ab lr' mode='aspectFill' src='../img/workbench/tixian@2x.png'></image>
+        </view>
+        <view>商户提现</view>
+        <view>{{price}}</view>
+      </view> 
+       <view>
+        <view class='rel' bindtap='put_forward_record'>
+          <image class='ab lr' mode='aspectFill' src='../img/workbench/record.png'></image>
+        </view>
+        <view>提现记录</view>
+        <view></view>
+      </view> 
+      <!-- <view>
+        <view class='rel'>
+          <image class='ab lr' mode='aspectFill' src='../img/workbench/yonghuzhongxing@2x.png'></image>
+        </view>
+        <view style='border:none;'>用户中心</view>
+        <view>2254</view>
+      </view> -->
+    </view>
+    <view class='body_head'>评价管理</view>
+    <view class='order_manage'>
+      <view bindtap='reply'>
+        <view class='rel'>
+          <image class='ab lr' mode='aspectFill' src='../img/workbench/pingjia.png'></image>
+        </view>
+        <view>
+          待回复
+        </view>
+      </view>
+      <view>
+        <view class='rel'>
+          <!-- <image class='ab lr' mode='aspectFill' src='../img/workbench/work.png'></image> -->
+        </view>
+        <view>
+          <!-- 已回复 -->
+        </view>
+        <view>
+          <!-- <text>{{store_info.ywc}}</text> -->
+          <!-- <text>单</text> -->
+        </view>
+      </view>
+      <view>
+        <view class='rel'>
+          <!-- <image class='ab lr' mode='aspectFill' src='../img/workbench/refund.png'></image> -->
+        </view>
+        <view>
+          <!-- 退款订单 -->
+        </view>
+        <view>
+          <!-- <text>{{store_info.ytk}}</text> -->
+          <!-- <text>单</text> -->
+        </view>
+      </view>
+    </view>
+    <view class='body_head'>扫码核销订单</view>
+    <view class='order_manage'>
+      <view bindtap='code'>
+        <view class='rel'>
+          <image class='ab lr' mode='aspectFill' src='../img/workbench/code.png'></image>
+        </view>
+        <view>
+          核销
+        </view>
+      </view>
+      <view>
+        <view class='rel'>
+          <!-- <image class='ab lr' mode='aspectFill' src='../img/workbench/work.png'></image> -->
+        </view>
+        <view>
+          <!-- 已回复 -->
+        </view>
+        <view>
+          <!-- <text>{{store_info.ywc}}</text> -->
+          <!-- <text>单</text> -->
+        </view>
+      </view>
+      <view>
+        <view class='rel'>
+          <!-- <image class='ab lr' mode='aspectFill' src='../img/workbench/refund.png'></image> -->
+        </view>
+        <view>
+          <!-- 退款订单 -->
+        </view>
+        <view>
+          <!-- <text>{{store_info.ytk}}</text> -->
+          <!-- <text>单</text> -->
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-----------------------订单  -->
+<view class='order' wx:if="{{index==1}}">
+  <view class='order_head'>
+    <view wx:for="{{order_nav}}" wx:key="*this" class="{{order_index == index ? 'border_one' : 'border_two'}}" bindtap='order_sele' data-index='{{index}}'>{{item.name}}</view>
+  </view>
+  <!-- <view class='search rel'>
+    <input class='ab udlr' bindtap='search' disabled='true' type='number' placeholder='请输入订单号...'></input>
+  </view> -->
+  <view class='order_list'>
+    <view class='rel' bindtap='order_info' wx:for="{{order}}" data-id='{{item.id}}'>
+      <view class='hotel_name'>
+        <text></text>
+        <text>{{item.seller_name}}</text>
+        <text>〉</text>
+      </view>
+      <view class='order_info' >下单时间：{{item.time}}</view>
+      <view class='order_info' >房型：{{item.room_type}}</view>
+      <view class='order_info'>入住人：{{item.name}}</view>
+      <view class='order_info'>联系电话：{{item.tel}}</view>
+      <view class='order_info'>入住天数：{{item.days}}天</view>
+      <view class='order_info'>入住时间：{{item.arrival_time}}至{{item.departure_time}}</view>
+      <view class='order_status ab'>{{item.status}}</view>
+      <view class='order_price ab'>{{item.total_cost}}元</view>
+    </view>
+  </view>
+</view>
+<!------------------------------房型管理  -->
+<view class='house_management' wx:if="{{index==2}}">
+  <view class='rel' wx:for="{{room}}">
+    <view class='ab'>
+      <image class='back_img' mode='aspectFill' src='{{item.img}}'></image>
+    </view>
+    <view class='many_body ab'>
+      <view class='many_head'>
+        <text class='{{item.class}}'>{{item.name}}</text>
+        <text>共{{item.total_num}}间</text>
+      </view>
+      <view class='price'>
+        <text>￥</text>
+        <text>{{item.price}}</text>
+      </view>
+      <view class='operation'>
+        <view bindtap='delete_house' data-id='{{item.id}}'>
+          <view>
+            <image mode='aspectFill' src='../img/sancu@2x.png'></image>
+          </view>
+          <view>删除</view>
+        </view>
+        <view bindtap='edit' data-id='{{item.id}}'>
+          <view>
+            <image mode='aspectFill' src='../img/bianji@2x.png'></image>
+          </view>
+          <view>编辑</view>
+        </view>
+        <view bindtap='change_room' data-id='{{item.id}}' data-state='{{item.state}}'>
+          <view>
+            <image mode='aspectFill' src='../img/shangjia.png'></image>
+          </view>
+          <view wx:if="{{item.state==1}}">下架</view>
+          <view wx:if="{{item.state==2}}">上架</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!------------------------------设置  -->
+<view class='set_up' wx:if="{{index==3}}">
+<!-- <audio poster="{{poster}}" name="{{name}}" author="{{author}}" src="https://i.y.qq.com/v8/playsong.html?songid=1452673&source=qq" id="myAudio" controls loop></audio> -->
+  <view>
+    开店/关店
+    <switch></switch>
+  </view>
+</view>
+<view class='bottom_nav'>
+  <view wx:for="{{nav}}" bindtap='nav_bottom' data-index='{{index}}' wx:key="*this">
+    <view class='rel'>
+      <image class='ab udlr' wx:if="{{item.id!=ac_index}}" mode='aspectFill' src='{{item.img}}'></image>
+      <image class='ab udlr' wx:if="{{item.id==ac_index}}" mode='aspectFill' src='{{item.img_select}}'></image>
+    </view>
+    <view wx:if="{{item.id==ac_index}}" style='color:#182E8F'>{{item.name}}</view>
+    <view wx:else>{{item.name}}</view>
+  </view>
+</view>

@@ -1,0 +1,60 @@
+<!--pages/jifen/jifen.wxml-->
+<view class='home'>
+  <view class='jifen' wx:if="{{nav!=null}}">
+    <swiper indicator-dots="true" autoplay="true" interval="1500" duration="500">
+      <block wx:for="{{nav}}">
+        <swiper-item>
+          <image src="{{url}}{{item.logo}}" mode='aspectFill' class="slide-image"/>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class='jflist'>
+    <view class='jflistbox' wx:for="{{type_list}}" bindtap='type_list' data-id='{{item.id}}'>
+      <image class='jflistimg' mode='aspectFill' src='{{url}}{{item.img}}'></image>
+      <view>{{item.name}}</view>
+    </view>
+  </view>
+
+  <view class='jfbanner'>
+    <view class='jftitle'>全部商品</view>
+    <view class='jfgoods'>
+      <view class='jfgoodsbox' bindtap='jifeninfo' wx:for="{{goods_list}}" wx:key="*this" data-id='{{item.id}}'>
+        <image class='jfgoodsimg' src='{{url}}{{item.img}}'></image>
+        <view class='jfgoodstop'>
+          <view class='flex_center'>
+            <view class='jflabel' wx:if="{{item.type==2}}">实物</view>
+            <view class='jflabel2' wx:else>红包</view>
+            <view class='jfname'>{{item.name}}</view>
+          </view>
+          <view class='flex_bet goodsmoney'>
+            <view>
+              <text class='goodsfont1'>{{item.score}}</text>
+              <text class='goodsfont2'>积分</text>
+            </view>
+            <!-- <view class='goodsfont3'>¥30</view> -->
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='jffoot'>我已经到底啦！</view>
+  </view>
+    <view class='copyright' bindtap='copyright'>
+    <image mode='aspectFill' src='{{url}}{{platform.bq_logo}}'></image>
+    {{platform.bq_name}}
+  </view>
+</view>
+<view class='score_bottom'>
+    <view bindtap='index'>
+        <image mode='aspectFill' src='../img/shouye.png'></image>
+        <view>返回首页</view>
+    </view>
+    <view bindtap='record'>
+        <image mode='aspectFill' src='../img/jilu.png'></image>
+        <view>积分记录</view>
+    </view>
+    <view bindtap='exchange'>
+        <image mode='aspectFill' src='../img/duihuan.png'></image>
+        <view>我的兑换</view>
+    </view>
+</view>

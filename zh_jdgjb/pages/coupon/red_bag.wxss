@@ -1,0 +1,103 @@
+page{
+  background: #f9f9f9;
+}
+.coupons_son {
+  width: 95%;
+  height: 200rpx;
+  margin: 20rpx auto;
+}
+
+.coupons_son>view {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.coupons_son>view {
+  height: 100%;
+}
+.coupons_son>view image{
+  width: 100%;
+  height: 100%;
+}
+.coupons_son>view:nth-child(1) {
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+}
+.coupons_son>view:nth-child(2) {
+  width: 30%;
+}
+
+.coupons_son>view:nth-child(3) {
+  width: 70%;
+  text-indent: 20rpx;
+}
+
+.coupons_son>view:nth-child(4) {
+  width: 25%;
+  right: 0;
+}
+
+.son_left>view {
+  text-align: center;
+  width: 100%;
+}
+
+.son_left>view:nth-child(1) {
+  height: 140rpx;
+  line-height: 180rpx;
+  font-size: 60rpx;
+  color: #fff;
+}
+
+.son_left>view:nth-child(2) {
+  height: 50rpx;
+  line-height: 54rpx;
+  font-size:22rpx;
+  color: #fff;
+}
+
+.son_left>view text:nth-child(1) {
+  font-size: 30rpx;
+}
+
+.son_left>view text:nth-child(2) {
+  font-size: 55rpx;
+  font-weight: bold;
+}
+
+.son_right>view {
+  width: 100%;
+}
+
+.son_right>view:nth-child(1) {
+  height: 80rpx;
+  font-size: 35rpx;
+  font-weight: bold;
+  line-height: 120rpx;
+}
+
+.son_right>view:nth-child(2) {
+  height: 30rpx;
+  font-size: 22rpx;
+  line-height: 30rpx;
+  color: #aaa;
+}
+
+.son_right>view:nth-child(3) {
+  height: 30rpx;
+  font-size: 22rpx;
+  line-height: 30rpx;
+  color: #aaa;
+  margin-top: 40rpx;
+}
+.not_user{
+  line-height: 324rpx;
+  text-align: left;
+}
+.not_user text{
+  padding: 10rpx 40rpx;
+  background: #182E8F;
+  font-size: 22rpx;
+  color: #fff;
+}

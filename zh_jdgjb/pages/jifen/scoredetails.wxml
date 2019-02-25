@@ -1,0 +1,5 @@
+<view class='score_detail' wx:for="{{score_detail}}" wx:key="*this">
+    <view>{{item.time}}</view>
+    <view wx:if="{{item.type==2}}">-{{item.score}}</view>
+    <view wx:else>+{{item.score}}</view>
+</view>

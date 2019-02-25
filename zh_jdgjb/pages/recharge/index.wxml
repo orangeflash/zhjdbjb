@@ -1,0 +1,27 @@
+<swiper interval="3000" duration="800" autoplay="true" indicator-dots="true" indicator-color="#ccc" circular="true" indicator-active-color="#182E8F">
+  <block wx:for="{{getad}}" wx:key="*this">
+    <swiper-item>
+      <image bindtap='skip' data-appid='{{item.appid}}' data-wb_src='{{item.wb_src}}' data-src='{{item.src}}' mode='aspectFill' src="{{url}}{{item.logo}}" class="slide-image" />
+    </swiper-item>
+  </block>
+</swiper>
+<view class='mine_money rel'>
+  <view>当前余额</view>
+  <view style='color:{{color}}'>￥{{userInfo.balance}}</view>
+</view>
+<view class='Recharge'>
+  <view>-\r\n\r\n会员充值\r\n\r\n-</view>
+  <view>
+    <view class="recharge_list {{ac_index==index?'sele':'noe_sele'}}"  wx:for="{{Czhd}}" wx:key="*this" bindtap='recharge_list' data-index='{{index}}' data-money='{{item.full}}'>
+      <view class="{{ac_index==index?'sele_c':'noe_sele_c'}}">￥{{item.full}}</view>
+      <view>送{{item.reduction}}元</view>
+    </view>
+     <!-- <view class="recharge_list {{ac_index==-1?'sele':'noe_sele'}}">
+      <view>
+          <input bindtap='qita' bindinput='money' placeholder='其他金额' placeholder-style='font-size:35rpx;'></input>
+      </view>
+      <view>充值立享优惠</view>
+    </view> -->
+  </view>
+</view>
+<button bindtap='chongzhi' style='background:{{color}}'>立即充值</button>

@@ -1,0 +1,91 @@
+/* zh_dianc/pages/personal/recharge.wxss */
+.head{
+  width: 100%;
+  height: 300rpx;
+  overflow: hidden;
+}
+.head swiper{
+  width: 100%;
+  height: 100%;
+}
+.head image{
+  width: 100%;
+  height: 100%;
+}
+.head>view:nth-child(2){
+  width: 100%;
+  height: 50rpx;
+  bottom: 0;
+  padding: 0 20rpx;
+  z-index: 100;
+}
+.head>view:nth-child(3){
+  width: 100%;
+  height: 50rpx;
+  background: #7ce5ff;
+  bottom: 0;
+  opacity: .5;
+  z-index: 10;
+  padding: 0 20rpx;
+}
+.head>view image:nth-child(1){
+  width: 30rpx;
+  height: 30rpx;
+  vertical-align: middle;
+}
+.head>view image:nth-child(4){
+  width:20rpx;
+  height: 30rpx;
+  right: 20rpx;
+  top: 0;
+}
+.head>view view{
+  display: inline-block;
+  vertical-align: middle;
+  width: 600rpx;
+  height: 30rpx;
+  font-size: 24rpx;
+  margin-left: 20rpx;
+  color: #fff;
+  /* background: red; */
+}
+.input{
+  background: #fff;
+  padding: 20rpx;
+  border-bottom: 2rpx solid #e5e5e5;
+}
+.input:nth-child(1){
+  margin-top: 20rpx;
+  border-top: 2rpx solid #e5e5e5;
+}
+.input>view{
+  display: inline-block;
+  vertical-align: middle;
+}
+.input>view:nth-child(1){
+  width:20%;
+}
+.input>view:nth-child(2){
+  width: 70%;
+}
+.input image{
+  width: 20rpx;
+  height: 30rpx;
+}
+button{
+  width: 95%;
+  height: 80rpx;
+  color: #fff;
+  font-size: 35rpx;
+  line-height: 80rpx;
+  background: #0fa6fe;
+  margin-top: 100rpx;
+}
+.swiper_container{
+  width: 100%;
+  height: 100%;
+}
+swiper-item{
+  width: 100%;
+  height: 100%;
+}

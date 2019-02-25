@@ -1,0 +1,28 @@
+<view class='echange' wx:for="{{exchange_list}}" wx:key="*this" bindtap='exchange_info' data-index='{{index}}'>
+  <view>
+    <image mode='aspectFill' src='{{url}}{{item.good_img}}'></image>
+  </view>
+  <view>
+    <view>
+      <text>商品：</text>
+      <text style='max-width:300rpx;' class='gobyndsingle'>{{item.good_name}}</text>
+      <text style='float:right' wx:if="{{item.state==1&&item.address!=''}}">待发货</text>
+      <text style='float:right;color:{{color}}' wx:if="{{item.state==2&&item.address!=''}}">已发货</text>
+    </view>
+    <view>
+      <text>积分：</text>
+      <text style='color:{{color}}'>{{item.integral}}分</text>
+    </view>
+    <view>
+      <text>兑换时间：</text>
+      <text>{{item.time}}</text>
+    </view>
+  </view>
+</view>
+<view class='express' wx:if="{{exchange_type==true}}">
+    <view class='ab' bindtap='exchange_info'></view>
+    <view class='ab udlr'>
+        <view>快递公司：{{exchange_info.kd_name}}</view>
+        <view>快递单号：{{exchange_info.kd_num}}</view>
+    </view>
+</view>

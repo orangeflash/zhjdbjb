@@ -1,0 +1,153 @@
+/* zh_jdgjb/pages/logs/house_info.wxss */
+
+.houser_logo {
+  /* width: 100%; */
+  height: 110rpx;
+  background: #fff;
+  line-height: 110rpx;
+  padding: 20rpx;
+}
+
+.houser_logo image {
+  width: 110rpx;
+  height: 110rpx;
+  float: right;
+  border-radius: 10rpx;
+}
+
+.border-bottom {
+  border-bottom: 2rpx solid #f9f9f9;
+}
+
+.houser {
+  padding: 20rpx;
+  background: #fff;
+}
+
+.houser>view {
+  height: 40rpx;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.houser>view:nth-child(1) {
+  width: 40%;
+}
+
+.houser>view:nth-child(2) {
+  width: 60%;
+}
+
+.houser>view input {
+  width: 100%;
+  height: 100%;
+  text-align: right;
+  color: #999;
+}
+
+.houser>view switch {
+  transform: scale(0.9);
+  right: -10rpx;
+  top: -10rpx;
+}
+
+.check_group {
+  width: 100%;
+  height: auto;
+  background: #fff;
+}
+
+.checkbox {
+  width: 95%;
+  margin-left: 5%;
+}
+
+.checkbox checkbox {
+  transform: scale(0.8);
+  padding: 10rpx;
+}
+
+.house_imgs {
+  padding: 0 10rpx 140rpx 20rpx;
+  background: #fff;
+  /* margin-bottom: 120rpx; */
+}
+
+.house_imgs>view {
+  width: 24%;
+  height: 150rpx;
+  border-radius: 10rpx;
+  margin-right: 1%;
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 20rpx;
+}
+.house_imgs>view image:nth-child(1){
+  width: 100%;
+  height: 100%;
+}
+.house_imgs>view image:nth-child(2){
+  width: 30rpx;
+  height: 30rpx;
+  right: 10rpx;
+  z-index: 5000;
+  top: 10rpx;
+}
+button {
+  position: fixed;
+  width: 100%;
+  bottom: 0rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 0;
+  background: #182e8f;
+  color: #fff;
+}
+
+/*维护  */
+
+.maintin {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  z-index: 500000000;
+}
+
+.maintin>view:nth-child(1) {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.5;
+}
+
+.maintin>view:nth-child(2) {
+  width: 90%;
+  height: 300rpx;
+  background: #fff;
+}
+
+.maintin>view view {
+  width: 20%;
+  height: 100rpx;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.maintin>view view view {
+  width: 100%;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.maintin>view view view:nth-child(1) {
+  background: #e5e5e5;
+  border-right: 2rpx solid #f9f9f9;
+}
+
+.maintin>view view view:nth-child(2) {
+  border-bottom: 2rpx solid #f9f9f9;
+  border-right: 2rpx solid #f9f9f9;
+}

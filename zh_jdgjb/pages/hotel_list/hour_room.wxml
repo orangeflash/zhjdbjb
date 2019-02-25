@@ -1,0 +1,52 @@
+<form bindsubmit="formSubmit" report-submit="true" bindreset="formReset">
+  <view class='head' style='background:{{color}}'>
+    <view>{{hotel.name}}</view>
+    <view>{{start}}入住，共{{rz_time}}小时</view>
+    <view>{{room.name}}</view>
+  </view>
+  <view class='body'>
+    <view>
+      <view>房间数量</view>
+      <view>
+        <input placeholder='' value='1间' disabled='true'></input>
+      </view>
+      <!-- <view>1</view> -->
+    </view>
+    <view>
+      <view>入住人</view>
+      <view>
+        <input name="name" placeholder='请填写您的姓名'></input>
+      </view>
+      <!-- <view>1</view> -->
+    </view>
+    <view>
+      <view>联系电话</view>
+      <view>
+        <input name="tel" placeholder='请填写您的联系方式'></input>
+      </view>
+      <!-- <view>1</view> -->
+    </view>
+      <view class='form_info_child' wx:if="{{platform.is_sfz==1}}">
+        <view>身份证号</view>
+        <view>
+          <input name="code" placeholder='请填写您的身份证号'></input>
+        </view>
+      </view>
+    <view>
+      <view>到店时间</view>
+      <view>
+        <picker mode="time" start="06:00" end="18:00" bindchange="bindTimeChange">
+          {{time}}
+        </picker>
+      </view>
+      <view>></view>
+    </view>
+  </view>
+  <view class='button'>
+    <view style='color:{{color}}'>
+      ￥
+      <text>{{cost}}</text>
+    </view>
+    <button formType='submit' style='background:{{color}}'>提交订单</button>
+  </view>
+</form>

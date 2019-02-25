@@ -1,0 +1,38 @@
+<view class='hotel_evaluate' wx:for="{{assess_list}}" wx:for-item="itemName">
+  <view class='evaluate_head'>
+    <view class='rel'>
+      <image mode='aspectFill' src='{{itemName.logo}}' class='ab ud'></image>
+    </view>
+    <view class='user'>
+      <view class='gobyndsingle'>{{itemName.name}}
+          <text bindtap='reply' data-id='{{itemName.id}}'>回复</text>
+      </view>
+      <view>{{itemName.time}}</view>
+    </view>
+  </view>
+  <view class='evaluate_content'>
+    <text>{{itemName.content}}</text>
+  </view>
+  <view class='evaluate_content' wx:if="{{itemName.img.length>1}}">
+    <view wx:for="{{itemName.img}}" bindtap='previewImage' id="{{itemName.id}}" data-index="{{index}}">
+      <image mode='aspectFill' src='{{url}}{{item}}'></image>
+    </view>
+  </view>
+</view>
+<view class='none_more' wx:if="{{none_more==true}}">没有更多了</view>
+<view class='none_order' wx:if="{{assess_list.length==0}}">
+  <image mode='aspectFill' src='../img/meiyoupinglun.png'></image>
+  <view>暂无需要回复的评论</view>
+</view>
+<view class='reply rel' wx:if="{{reply==true}}">
+    <view class='ab'></view>
+    <view class='ab udlr'>
+        <view>
+            <textarea maxlength='540' bindinput='textarea' placeholder='请输入对用户的回复'></textarea>
+        </view>
+        <view>
+            <text bindtap='reply'>取消</text>
+            <text bindtap='determine'>确定</text>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,237 @@
+/**index.wxss**/
+.indexdi{
+  height: 500rpx;
+  width: 100%;
+}
+.ibanzname{
+  width: 120rpx;
+  /* background-color: pink; */
+  height: 40rpx;
+  font-size: 24rpx;
+  text-align: center;
+  /* display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1; */
+}
+/* ——————————开屏广告部分—————————— */
+.bomb{
+ 
+  position: fixed;
+  z-index: 100;
+  top: 0rpx;
+  left: 0rpx;
+  right: 0rpx;
+  bottom: 0rpx;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.bombox{
+  width: 80%;
+  height: 80%;
+  margin-left: 10%;
+  margin-top: 10%;
+  border-radius: 15rpx;
+  overflow: hidden;
+}
+.bombox video{
+  width: 100%;
+  height: 100%;
+}
+.bombox swiper{
+  width: 100%;
+  height: 100%;
+}
+.bombox swiper image{
+  width: 100%;
+  height: 100%;
+  border-radius: 15rpx;
+}
+.bombimg{
+  width: 100%;
+  height: 100%;  
+}
+.shanchu{
+  position: absolute;
+  top: 51rpx;
+  right: 60rpx;
+  width: 50rpx;
+  height: 50rpx;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  z-index: 101;
+  font-size: 48rpx;
+  color: white;
+  line-height: 45rpx;
+  text-align: center;
+}
+
+.indexdi>image{
+  width: 100%;
+  height: 100%;
+  /* background-color: pink; */
+}
+.indexup{
+  position: absolute;
+  top: 25%;
+  left: 0rpx;
+  z-index: 5;
+  width: 100%;
+}
+.indexupimg{
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 20rpx;
+}
+.ikefu{
+  border: 1rpx solid #666;
+  border-radius: 15rpx;
+  background-color: white;
+  width: 80%;
+  padding: 25rpx 0rpx;
+  margin-top: 80rpx;
+}
+.ikefubox1{
+  width: 49%;
+  border-right: 1rpx solid #eee;
+}
+.ikefubox2{
+  width: 50%;
+}
+
+.indexbox{
+  background-color: white;
+  border-radius: 15rpx;
+  box-shadow: 5rpx 5rpx 10rpx #eee;
+  padding: 30rpx 50rpx;
+  width: 68%;
+}
+.isearch{
+  border-bottom: 1rpx solid #eee;
+  display: flex;
+  padding-bottom: 30rpx;
+}
+.isearchimg{
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
+}
+.isearchimg2{
+  width: 25rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
+}
+.isearchleft{
+  width: 74%;
+  border-right: 1rpx solid #eee;
+}
+.isearchrit{
+  width: 25%;
+  color: #172A97;
+}
+
+.icontent{
+  display: flex;
+  padding: 50rpx 0rpx;
+  font-size: 26rpx;
+  border-bottom: 1rpx solid #eee;
+  position: relative;
+}
+.iconleft{
+  width: 49.5%;
+  border-right: 1rpx solid #eee;
+}
+.iconrit{
+  width: 49.5%;
+}
+.iconfont1{
+  font-size: 36rpx;
+  color: #172A97;
+  margin-bottom: 30rpx;
+}
+.iconnum{
+  background-color: white;
+  position: absolute;
+  bottom: -15rpx;
+  left: 30%;
+  width: 40%;
+  text-align: center;
+}
+.iconbutton{
+  text-align: center;
+  line-height: 100rpx;
+  border-radius: 15rpx;
+  margin-top: 80rpx;
+  font-size: 36rpx;
+}
+.sure{
+  background: -webkit-linear-gradient(left, #172E93 , #1F50AF); /* Safari 5.1 - 6.0 */
+  background: linear-gradient(to right,  #172E93 , #1F50AF);
+  color: white;
+}
+.none{
+  color: #333;
+  background: #f9f9f9;
+}
+.ibanner{
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 30rpx;
+  margin-top: 30rpx;
+}
+.ibanner>.flex3{
+  width: 25%;
+}
+.ibanimg{
+  width: 100rpx;
+  height: 100rpx;
+  margin-bottom: 15rpx;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+.foot{
+  position: fixed;
+  z-index: 99;
+  bottom: 0rpx;
+  left: 0rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-top: 1rpx solid #eee;
+  background-color: white;
+  padding: 15rpx 0rpx 10rpx;
+  font-size: 22rpx;
+}
+.footbox{
+  width: 50%;
+}
+.footban{
+  width: 100%;
+  height: 340rpx;
+}
+.footbox>image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-bottom: 10rpx;
+}
+.footfont1{
+  color: #182E8F;
+}
+button{
+  background: none;
+  color: #fff;
+}
+button::after{
+  border: none;
+}
+
+
+
+
+
+

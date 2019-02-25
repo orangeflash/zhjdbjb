@@ -1,0 +1,132 @@
+page{
+  background: #fff;
+}
+.none_order{
+  padding-top: 130rpx;
+}
+/*酒店评价  */
+.hotel_evaluate{
+  width: 95%;
+  padding: 20rpx 0;
+  height: auto;
+  margin: 0 auto 0;
+  border-bottom: 2rpx solid #f9f9f9;
+}
+.evaluate_head{
+  width: 100%;
+  height: 100rpx;
+}
+.evaluate_head>view{
+  display: inline-block;
+  vertical-align: middle;
+}
+.evaluate_head>view:nth-child(1){
+  width: 15%;
+  height: 100%;
+}
+.evaluate_head>view image{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  left: 0;
+}
+.user{
+  width: 85%;
+}
+.user>view:nth-child(1){
+  font-size: 28rpx;
+}
+.user>view:nth-child(2){
+  font-size: 23rpx;
+  color: #999;
+}
+.user>view text{
+  float: right;
+  color: #E75119;
+}
+.evaluate_content{
+  width: 85%;
+  margin-left: 15%;
+  height: auto;
+  /* min-height: 100rpx; */
+  /* font-weight: bold; */
+  font-size: 24rpx;
+}
+.whole_evaluate{
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+  color: #E75119;
+  text-align: center;
+  font-size: 22rpx;
+  background: #f9f9f9;
+}
+.evaluate_content>view{
+  width: 33.333%;
+  height: 180rpx;
+  box-sizing: border-box;
+  border-right: 2rpx solid #f9f9f9;
+  margin-top: 4rpx;
+  display: inline-block;
+  vertical-align: middle;
+}
+.evaluate_content>view image{
+  width: 100%;
+  height: 100%;
+}
+.none_more{
+  padding: 20rpx;
+  text-align: center;
+  font-size: 26rpx;
+  color: #999;
+}
+
+/*弹框  */
+.reply{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 10000000;
+  bottom: 0;
+  overflow: hidden;
+}
+.reply>view:nth-child(1){
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: .5;
+  z-index: 500;
+}
+.reply>view:nth-child(2){
+  width: 90%;
+  height: 500rpx;
+  background: #fff;
+  border-radius: 15rpx;
+  z-index: 500000;
+}
+.reply>view view:nth-child(1){
+  width: 90%;
+  height: 400rpx;
+  margin: 20rpx auto 0;
+}
+.reply>view view textarea{
+  width: 100%;
+  height: 100%;
+}
+.reply>view view:nth-child(2){
+  width: 100%;
+  height: 80rpx;
+  box-sizing: border-box;
+  border-top: 2rpx solid #e5e5e5;
+}
+.reply>view view text{
+  display: inline-block;
+  width: 50%;
+  height: 100%;
+  line-height: 80rpx;
+  box-sizing: border-box;
+  text-align: center;
+}
+.reply>view view text:nth-child(1){
+  border-right: 2rpx solid #e5e5e5;
+}

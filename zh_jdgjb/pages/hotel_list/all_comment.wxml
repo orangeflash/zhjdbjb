@@ -1,0 +1,27 @@
+<view class='hotel_evaluate' wx:for="{{assess_list}}" wx:for-item="itemName">
+  <view class='evaluate_head'>
+    <view class='rel'>
+      <image mode='aspectFill' src='{{itemName.logo}}' class='ab ud'></image>
+    </view>
+    <view class='user'>
+      <view class='gobyndsingle'>{{itemName.name}}</view>
+      <view>{{itemName.time}}</view>
+    </view>
+  </view>
+  <view class='evaluate_content'>
+    <text>{{itemName.content}}</text>
+  </view>
+  <view class='evaluate_content' wx:if="{{itemName.img.length>1}}">
+    <view wx:for="{{itemName.img}}" bindtap='previewImage' id="{{itemName.id}}" data-index="{{index}}">
+      <image mode='aspectFill' src='{{url}}{{item}}'></image>
+    </view>
+  </view>
+    <view class='evaluate_content' style='background:#f9f9f9;' wx:if="{{itemName.reply!=''}}">
+      <text>商家回复：{{itemName.reply}}</text>
+    </view>
+</view>
+<view class='none_more' wx:if="{{none_more==true}}">没有更多了</view>
+<view class='none_order' wx:if="{{assess_list.length==0}}">
+  <image mode='aspectFill' src='../img/meiyoupinglun.png'></image>
+  <view>暂无评论</view>
+</view>

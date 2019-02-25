@@ -1,0 +1,19 @@
+<view class='coupons_son rel' style='border-bottom-color:inherit' wx:for="{{red_bag}}">
+  <view class='ab'>
+    <image mode='aspectFill' src='../img/youhuij@2x.png'></image>
+  </view>
+  <view class='son_left'>
+    <view>
+      <text>￥</text>
+      <text>{{item.money}}</text>
+    </view>
+  </view>
+  <view class='son_right'>
+    <view>积分红包</view>
+    <view></view>
+    <view>无限期</view>
+  </view>
+  <view class='not_user ab'>
+    <text bindtap='receive_coupon' id="{{item.id}}" data-money="{{item.money}}">立即使用</text>
+  </view>
+</view>

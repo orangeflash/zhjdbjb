@@ -1,0 +1,162 @@
+/* pages/order/orderinfo/orderinfo.wxss */
+page{
+  background-color: white;
+}
+.header{
+  background-color: #182E8F;
+  height: 300rpx;
+  /* width: 600rpx; */
+  position: relative;
+}
+.hcontent{
+  background-color: white;
+  width: 80%;
+  padding: 40rpx 30rpx;
+  position: absolute;
+  top: 40rpx;
+  z-index: 5;
+  left: 6.5%;
+  box-shadow: 0rpx 5rpx 5rpx 5rpx #eee;
+  border-radius: 10rpx;
+}
+.hcfont1{
+  font-size: 36rpx;
+}
+.hcfont2{
+  color: #999;
+  width: 100%;
+  margin-top: 25rpx;
+}
+.ordizhi{
+  width: 50rpx;
+  height: 50rpx;
+}
+.icontent{
+  display: flex;
+  padding-top: 30rpx;
+  font-size: 26rpx;
+  border-top: 1rpx solid #eee;
+  position: relative;
+  margin-top: 20rpx;
+}
+.iconleft{
+  width: 49.5%;
+  border-right: 1rpx solid #eee;
+}
+.iconrit{
+  width: 49.5%;
+}
+.iconfont1{
+  font-size: 36rpx;
+  color: #172A97;
+  margin-bottom: 30rpx;
+}
+
+.osection{
+  margin-top: 120rpx;
+}
+.osecnei{
+  display: flex;
+  padding: 15rpx 20rpx;
+}
+.osecnei>view:nth-child(1){
+  color: #999;
+  width: 180rpx;
+}
+.osecnei>view:nth-child(3){
+  display: inline-block;
+  font-size: 24rpx;
+  border-radius: 8rpx;
+  margin-left: 340rpx;
+  padding: 10rpx 20rpx;
+  color: #fff;
+}
+.osecfont1{
+  color: #E75119;
+}
+.osecfont2{
+  color: #E75119;
+}
+
+.osecfoot{
+  width: 100%;
+  height: 150rpx;
+}
+.orderfoot{
+  display: flex;
+  position: fixed;
+  color: white;
+  width: 100%;
+  z-index: 10;
+  bottom: 0rpx;
+  left: 0rpx;
+}
+.ofbutton,.ofbox{
+  text-align: center;
+  line-height: 120rpx;
+}
+.ofbutton{
+  width: 50%;
+}
+.ofbutton:nth-child(1){
+  box-sizing: border-box;
+  border-right: 2rpx solid #fff;
+}
+.ofbox{
+  width: 100%;
+}
+.ofbox{
+  font-size: 34rpx;
+}
+.ofbutton{
+  border: none;
+  background-color: #E75119;
+  border-radius: 0rpx;
+  color: white;
+}
+.fixed>view:nth-child(1){
+  background: #000;
+  opacity: .5;
+}
+.YjRefund{
+  width: 90%;
+  height: 300rpx;
+  border-radius: 15rpx;
+  background: #fff;
+}
+.YjRefund>view:nth-child(1){
+  width: 100%;
+  height: 210rpx;
+  padding: 0 30rpx;
+}
+.YjRefund input{
+  width: 90%;
+  height: 50rpx;
+}
+.YjRefund>view:nth-child(2){
+  width: 100%;
+  height: 90rpx;
+  box-sizing: border-box;
+  border-top: 2rpx solid #e5e5e5;
+}
+.YjRefund text{
+  display: inline-block;
+  width: 50%;
+  height: 100%;
+  line-height:30rpx;
+  text-align: center;
+  box-sizing: border-box;
+  font-size: 28rpx;
+}
+.YjRefund text:nth-child(1){
+  border-right: 2rpx solid #e5e5e5;
+}
+
+
+
+
+
+
+
+
+

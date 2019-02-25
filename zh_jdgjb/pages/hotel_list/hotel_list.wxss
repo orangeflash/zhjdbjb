@@ -1,0 +1,201 @@
+/* pages/content/content.wxss */
+
+page {
+  width: 100%;
+  height: 100%;
+}
+.container {
+  width: 100%;
+  height: 100%;
+}
+.top {
+  width: 100%;
+  height: 30%;
+}
+.top image {
+  width: 100%;
+  height: 100%;
+}
+.bottom {
+  width: 100%;
+  height: 70%;
+  background: #fff;
+  position: relative;
+}
+.top_sort {
+  width: 100%;
+  height: 250rpx;
+  background: #fff;
+  position: relative;
+}
+.top_sort>view {
+  width: 95%;
+  height: 80rpx;
+  position: absolute;
+  bottom: 0;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  left: 2.5%;
+  display: flex;
+  border-bottom: 2rpx solid #e5e5e5;
+}
+.top_sort>view view {
+  flex: 3;
+  text-align: center;
+  color: #444;
+}
+.indexbox {
+  background-color: white;
+  box-shadow: 0rpx 5rpx 5rpx 5rpx #eee;
+  padding: 50rpx 50rpx;
+  width: 65%;
+  position: absolute;
+  top: -200rpx;
+  left: 12.5%;
+  border-radius: 8rpx;
+  z-index: 500;
+}
+
+.hotel_info {
+  padding: 20rpx;
+  height: 180rpx;
+   background: #fff; 
+  margin: 0rpx auto 0;
+  border-bottom: 2rpx solid #f9f9f9;
+}
+.hotel_info:nth-last-child(2){
+  border-bottom: none;
+}
+.hotel_info>view {
+  float: left;
+}
+.timg{
+  width: 100%;
+  height: 500rpx;
+  position: fixed;
+  top: 500rpx;
+}
+.timg image{
+  width: 176rpx;
+  height: 276rpx;
+}
+.info_left {
+  width: 25%;
+  height: 100%;
+  position: relative;
+}
+.info_left image {
+  width: 100%;
+  height: 82%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  border-radius: 8rpx;
+}
+.iconaddress {
+  width: 20rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
+}
+.info_right {
+  width: 72%;
+  height: 100%;
+  margin-left: 3%;
+}
+.infritbox{
+  margin-top: 10rpx;
+}
+.info_right1 {
+  width: 100%;
+  font-size: 32rpx;
+  color: #000;
+  font-weight: 599;
+}
+.info_right2{
+  width: 100%;
+  color: #555;
+  font-size: 26rpx;
+}
+
+.isearch {
+  border-bottom: 1rpx solid #eee;
+  display: flex;
+  padding-bottom: 15rpx;
+}
+.isearchimg {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
+}
+.isearchimg2 {
+  width: 25rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
+}
+.isearchrit {
+  width: 25%;
+  color: #172a97;
+}
+.icontent {
+  display: flex;
+  padding: 30rpx 0rpx 20rpx;
+  font-size: 26rpx;
+  color: #999;
+}
+.iconleft {
+  width: 49.5%;
+  border-right: 1rpx solid #eee;
+  position: relative;
+}
+.iconrit {
+  width: 49.5%;
+}
+.iconfont1 {
+  font-size: 32rpx;
+  color: #172a97;
+  margin-bottom: 25rpx;
+}
+.iconnum {
+  background-color: #fff;
+  position: absolute;
+  top: 32%;
+  right: -50rpx;
+  width: 100rpx;
+  text-align: center;
+  padding: 10rpx 0rpx;
+}
+.ritfont1 {
+  color: #999;
+  width: 290rpx;
+  display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 1;
+	overflow: hidden;
+  font-size: 24rpx;
+}
+.ritfont2 {
+  color: #182E8F;
+}
+.ritfont3{
+  color: #182E8F;
+  font-size: 46rpx;
+  margin-left: 10rpx;
+}
+.ritfont4{
+  color: #999;
+}
+.none_more{
+  width: 100%;
+  padding: 20rpx 0;
+  font-size: 24rpx;
+  color: #ccc;
+  text-align: center;
+}
+.scroll-view{
+  width: 100%;
+  height: 550rpx;
+}
+
+

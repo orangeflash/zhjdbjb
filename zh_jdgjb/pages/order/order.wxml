@@ -1,0 +1,46 @@
+<view class="container">
+  <view class='order_title'>
+    <!-- <view wx:for="{{titel}}" class="{{activeIndex == index ? 'weuibaron' : ''}}" bindtap='tabClick' data-index='{{index}}'>{{item}}</view> -->
+     <view data-index='0' data-state = "" style='color:{{color}};border-bottom:2rpx solid {{color}}' bindtap="tabClick" wx:if="{{activeIndex==0}}">{{titel[0]}}</view>
+        <view data-index='0' data-state = "" bindtap="tabClick" wx:if="{{activeIndex==1||activeIndex==2}}">{{titel[0]}}</view>
+        <view data-index='1' data-state = "1" style='color:{{color}};;border-bottom:2rpx solid {{color}}' bindtap="tabClick" wx:if="{{activeIndex==1}}">{{titel[1]}}</view>
+        <view data-index='1' data-state = "1" bindtap="tabClick" wx:if="{{activeIndex==0||activeIndex==2}}">{{titel[1]}}</view>
+        <view data-index='2'  data-state = "2" style='color:{{color}};border-bottom:2rpx solid {{color}}' bindtap="tabClick" wx:if="{{activeIndex==2}}">{{titel[2]}}</view>
+        <view data-index='2' data-state = "10" bindtap="tabClick" wx:if="{{activeIndex==1||activeIndex==0}}">{{titel[2]}}</view>
+  </view>
+  <view class='order_list'>
+    <view wx:for="{{order_list}}" data-id='{{item.id}}' bindtap='order_info'>
+      <view class='order_info'>
+        <view class='rel'>
+          <image style='width:100%;height:100%;border-radius:10rpx;' mode='aspectFill' src='{{url}}{{item.room_logo}}'></image>
+        </view>
+        <view class='info'>
+          <view>{{item.seller_name}}</view>
+          <view>房型：{{item.room_type}}</view>
+          <view>床型：{{item.bed_type}}米</view>
+          <view>入住：{{item.arrival_time}} 离店：{{item.departure_time}}</view>
+        </view>
+        <view class='order_state rel'>
+          <view class='ab udlr'>
+            <view style='color:{{color}}'>￥{{item.total_cost}}</view>
+            <view wx:if="{{item.status==1}}">待付款</view>
+            <view wx:if="{{item.status==2}}">待接单</view>
+            <view wx:if="{{item.status==3}}">已取消</view>
+            <view wx:if="{{item.status==4}}">已完成</view>
+            <view wx:if="{{item.status==5}}">待评价</view>
+            <view wx:if="{{item.status==6}}">申请退款中</view>
+            <view wx:if="{{item.status==7}}">退款成功</view>
+            <view wx:if="{{item.status==8}}">拒绝退款</view>
+            <view wx:if="{{item.status==9}}">拒绝入住</view>
+            <view wx:if="{{item.status==10}}">待入住</view>
+            <view wx:if="{{item.status==12}}">已评价</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+    <view class='none_order' wx:if="{{order_list.length==0}}">
+        <image mode='aspectFill' src='../img/meiyoudingdan.png'></image>
+        <view>暂无订单</view>
+    </view>
+</view>

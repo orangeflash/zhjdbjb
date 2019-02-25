@@ -1,0 +1,94 @@
+
+<view class='backgrod' wx:if="{{backgrod==true}}">
+    <view class='ab' bindtap='Preservation'></view>
+    <view class='ab udlr'>
+        邀请朋友扫码获取佣金
+        <image mode='aspectFill' src='data:image/png;base64,{{code}}'></image>
+    </view>
+</view>
+<view class='head rel' style='background:{{color}}'>
+  <!-- <image mode='aspectFill' src='{{avatarUrl}}'></image>
+  <view class='user_name'>
+    {{nickName}}
+  </view> -->
+  <view class='distribution_cost ab lr'>
+    <view class='ab lr'>
+      <image mode='aspectFill' src='{{avatarUrl}}'></image>
+      <text>邀请人：{{name}}</text>
+    </view>
+    <view>
+      可提现(元)
+    </view>
+    <view class='put_forward'>
+      <text>{{statistics.ktx}}</text>
+      <text bindtap='forward'>点击提现</text>
+    </view>
+    <view class='commission'>
+      <text>累计佣金：</text>
+      <text>{{statistics.lj}}</text>元
+      <text></text>
+    </view>
+  </view>
+</view>
+<view class='body'>
+  <view class='list' bindtap='commission'>
+    <image mode='aspectFill' src='../img/yongjin.png'></image>
+    <view>
+      分销佣金
+    </view>
+    <view>
+      分销佣金
+    </view>
+  </view>
+  <view class='list none_border' bindtap='team'>
+    <image mode='aspectFill' src='../img/team.png'></image>
+    <view>
+      我的团队
+    </view>
+    <view>
+      {{length}}个团队
+    </view>
+  </view>
+  <view class='border'></view>
+  <view class='list' bindtap='detauled'>
+    <image mode='aspectFill' src='../img/mingxi.png'></image>
+    <view>
+      佣金明细
+    </view>
+    <view>
+      佣金提现明细
+    </view>
+  </view>
+  <view class='list none_border' bindtap='qr_code'>
+    <image mode='aspectFill' src='../img/code.png'></image>
+    <view>
+      二维码
+    </view>
+    <view>
+      推广二维码
+    </view>
+  </view>
+</view>
+<view class='share' wx:if="{{share==true}}">
+  <view class='ab share_mode'>
+    <view class='rel'>
+      <view class='ab udlr'>
+        <image mode='aspectFill' src='../img/wechat.png'></image>
+        <text>发送给好友</text>
+        <button open-type='share'></button>
+      </view>
+    </view>
+    <view class='rel'>
+      <view class='ab udlr' bindtap='Preservation'>
+        <image mode='aspectFill' src='../img/wechat_friend.png'></image>
+        <text>面对面</text>
+      </view>
+    </view>
+    <view bindtap='qr_code'>取消</view>
+  </view>
+  <view class='ab'></view>
+</view>
+  <view class='copyright' bindtap='copyright'>
+    <image mode='aspectFill' src='{{url}}{{platform.bq_logo}}'></image>
+    {{platform.bq_name}}
+  </view>

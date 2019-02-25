@@ -1,0 +1,45 @@
+<!--zh_dianc/pages/seller/login.wxml-->
+<view class='main'>
+  <view class='head_img lr'>
+      <image mode='aspectFill' src='{{url}}{{pt_img}}'></image>
+  </view>
+  <view class='headwz' style='color:#fff'>{{pt_name}}</view>
+  <view class='resite border1'>
+    <view>
+      <view class='resite_one'>
+        <view class='text'>
+          <view class='rel'>
+            <image class='ab udlr' src='../img/account.png'></image>
+          </view>
+          <view>
+            <input bindinput='name' placeholder='请输入账号' placeholder-style='font-size:30rpx;'></input>
+          </view>
+        </view>
+      </view>
+      <view class='resite_one'>
+        <view class='text'>
+          <view class='rel'>
+            <image class='ab udlr' src='../img/password.png'></image>
+          </view>
+          <view>
+            <input bindinput='password' placeholder='请输入密码'></input>
+          </view>
+        </view>
+      </view>
+    </view>
+    <button bindtap='sign' style='background:{{color}}'>登录</button>
+    <!-- <view class='weixin border2' bindtap='weixin'>微信登陆</view> -->
+  </view>
+  <!-- <view class='wechat_login ab lr' bindtap='wechat_login'>
+      <image mode='aspectFill' src='../img/wechat_login.png'></image>
+  </view> -->
+   <view class='wechat_login ab lr' bindtap='wechat_login' style='background:{{color}}'>
+      微信登录
+  </view>
+  <view class='ft' bindtap='tel'>
+    <view style='color:#fff'>客服电话：{{tel}}</view>
+  </view>
+</view>
+<view class='back'>
+    <image mode='aspectFill' src='../img/back.png'></image>
+</view>

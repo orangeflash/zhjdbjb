@@ -1,0 +1,547 @@
+/* zh_jd/pages/logs/Backstage/Workbench.wxss */
+
+page {
+  background: #f9f9f9;
+}
+
+.bottom_nav {
+  position: fixed;
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  bottom: 0;
+  border-top: 2rpx solid #ccc;
+  background: #fff;
+  z-index: 500000000;
+}
+
+.bottom_nav>view {
+  flex: 3;
+  height: 100%;
+}
+
+.bottom_nav>view view:nth-child(1) {
+  width: 100%;
+  height: 65%;
+}
+
+.bottom_nav>view view image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.bottom_nav>view view:nth-child(2) {
+  width: 100%;
+  height: 35%;
+  line-height: 25rpx;
+  font-size: 26rpx;
+  text-align: center;
+  color: rgb(102, 102, 102);
+}
+
+/*工作台  */
+
+.seller_info {
+  padding: 20rpx;
+  height: 500rpx;
+  color: #fff;
+}
+
+.seller_info>view:nth-child(1) {
+  height: 150rpx;
+}
+.seller_info>view image{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+}
+.seller_info>view:nth-child(2) {
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+}
+
+.info_index {
+  height: 300rpx;
+}
+
+.info_index>view {
+  display: inline-block;
+  width: 50%;
+  height: 150rpx;
+  vertical-align: middle;
+}
+
+.info_index>view view:nth-child(1) {
+  line-height: 100rpx;
+  height: 100rpx;
+  text-align: center;
+}
+.info_index>view view text:nth-child(1){
+  font-size: 60rpx;
+  font-weight: bold;
+}
+.info_index>view view text:nth-child(2){
+  font-size: 24rpx;
+}
+.info_index>view view:nth-child(2) {
+  line-height: 50rpx;
+  height: 50rpx;
+  text-align: center;
+}
+
+.head {
+  width: 100%;
+  height: 470rpx;
+  background: #fff;
+}
+
+.head>view:last-child {
+  /* width: auto;
+  padding: 10rpx 20rpx;
+  top: 30rpx;
+  right: 20rpx;
+  border-radius: 10rpx;
+  color: #fff;
+  background: #182e8f;
+  z-index: 100000000000; */
+}
+
+.back_image {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+}
+
+.back_image image {
+  width: 100%;
+  height: 100%;
+}
+
+.hotel {
+  width: 100%;
+  height: 170rpx;
+  padding-top: 40rpx;
+  line-height: 170rpx;
+  z-index: 200;
+}
+
+.hotel image {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+}
+
+.hotel>view {
+  height: 100%;
+  line-height: 140rpx;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.hotel>view:nth-child(1) {
+  width: 140rpx;
+  height: 140rpx;
+  margin-left: 50rpx;
+}
+
+.hotel>view:nth-child(2) {
+  width: 380rpx;
+  height: 140rpx;
+  margin-left: 20rpx;
+  color: #fff;
+  font-size: 30rpx;
+}
+
+.price {
+  widows: 100%;
+  height: 200rpx;
+  position: relative;
+  z-index: 200;
+}
+
+.price>view {
+  position: absolute;
+  width: 33.3%;
+  height: 140rpx;
+}
+
+.price>view:nth-child(1) {
+  bottom: 10rpx;
+  left: 0;
+}
+
+.price>view:nth-child(2) {
+  bottom: 40rpx;
+  left: 33.3%;
+}
+
+.price>view:nth-child(3) {
+  bottom: 70rpx;
+  left: 66.6%;
+}
+
+.price>view view {
+  width: 100%;
+  height: 50%;
+  text-align: center;
+  font-size: 30rpx;
+  color: #fff;
+}
+
+.price>view view:nth-child(1) {
+  line-height: 90rpx;
+}
+
+.price>view view:nth-child(2) {
+  line-height: 50rpx;
+}
+
+.body {
+  width: 100%;
+  height: auto;
+  background: #fff;
+  padding-bottom: 150rpx;
+}
+
+.body_head {
+  width: 100%;
+  height: 80rpx;
+  font-size: 32rpx;
+  text-indent: 20rpx;
+  line-height: 80rpx;
+  color: #333;
+}
+
+.order_manage {
+  width: 100%;
+  height: 240rpx;
+  display: flex;
+}
+
+.order_manage>view {
+  flex: 3;
+}
+
+.order_manage>view view image {
+  width: 100rpx;
+  height: 100rpx;
+  top: 30rpx;
+}
+
+.order_manage>view view {
+  text-align: center;
+}
+
+.order_manage>view view:nth-child(1) {
+  width: 100%;
+  height: 140rpx;
+}
+
+.order_manage>view view:nth-child(2) {
+  width: 100%;
+  height: 50rpx;
+  color: rgb(102, 102, 102);
+}
+
+.order_manage>view view:nth-child(3) {
+  width: 100%;
+  height: 50rpx;
+}
+
+.order_manage>view view text:nth-child(1) {
+  color: rgb(194, 41, 41);
+}
+
+.order_manage>view view text:nth-child(2) {
+  color: rgb(102, 102, 102);
+}
+
+.finance {
+  width: 100%;
+  height: auto;
+}
+
+.finance>view {
+  width: 33.3%;
+  height: 200rpx;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.finance>view view image {
+  width: 100rpx;
+  height: 100rpx;
+  /* top: 20rpx; */
+}
+
+.finance>view view {
+  text-align: center;
+}
+
+.finance>view view:nth-child(1) {
+  width: 100%;
+  height: 100rpx;
+}
+
+.finance>view view:nth-child(2) {
+  width: 100%;
+  height: 50rpx;
+  color: rgb(102, 102, 102);
+  border-right: 2rpx solid #e5e5e5;
+  box-sizing: border-box;
+}
+
+.finance>view view:nth-child(3) {
+  width: 100%;
+  height: 50rpx;
+}
+
+.border_none {
+  border-right: 2rpx solid #fff;
+}
+
+/*全部订单  */
+.order{
+  margin-bottom: 100rpx;
+}
+.order_head {
+  width: 100%;
+  height: 100rpx;
+  background: #fff;
+}
+
+.order_head>view {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  width: 25%;
+  height: 100%;
+  line-height: 100rpx;
+  font-size: 32rpx;
+  box-sizing: border-box;
+}
+
+.border_one {
+  border-bottom: 4rpx solid #182e8f;
+  color: #182e8f;
+  font-weight: 550;
+}
+
+.border_two {
+  border-bottom: 2rpx solid #e5e5e5;
+}
+
+.search {
+  width: 100%;
+  height: 100rpx;
+  background: #fff;
+  border-bottom: 2rpx solid #e5e5e5;
+}
+
+.search input {
+  width: 80%;
+  height: 80rpx;
+  background: #f9f9f9;
+  text-align: center;
+  border-radius: 10rpx;
+}
+
+.order_list {
+  width: 100%;
+  height: auto;
+  padding-bottom: 100rpx;
+}
+
+.order_list>view {
+  width: 100%;
+  height: auto;
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+
+.hotel_name {
+  width: 95%;
+  height: 40rpx;
+  border-bottom: 2rpx solid #e5e5e5;
+  padding: 20rpx 0;
+  margin: 0 auto 0;
+}
+
+.hotel_name>text {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.hotel_name>text:nth-child(1) {
+  width: 10rpx;
+  height: 100%;
+  background: orange;
+  margin-right: 10rpx;
+}
+
+.hotel_name>text:nth-child(3) {
+  width: 10rpx;
+  height: 100%;
+  float: right;
+  margin-right: 10rpx;
+}
+
+.order_info {
+  width: 95%;
+  height: 60rpx;
+  line-height: 60rpx;
+  margin: 0 auto 0;
+  color: rgb(102, 102, 102);
+}
+
+.order_status {
+  padding: 10rpx 30rpx;
+  color: rgb(32, 48, 120);
+  right: 20rpx;
+  bottom: 10rpx;
+  border: 2rpx solid #182e8f;
+  border-radius: 10rpx;
+}
+.order_price {
+  color: #666;
+  right: 20rpx;
+  top: 160rpx;
+}
+
+/*设置  */
+
+.set_up {
+  width: 100%;
+  height: auto;
+  background: #fff;
+}
+
+.set_up>view {
+  width: 95%;
+  height: 80rpx;
+  margin: 0 auto 0;
+  box-sizing: border-box;
+  border-bottom: 2rpx solid #f9f9f9;
+  line-height: 80rpx;
+}
+
+.set_up>view text:nth-child(2) {
+  float: right;
+}
+
+switch {
+  float: right;
+}
+
+/*房型管理  */
+
+.house_management {
+  width: 100%;
+  height: 100%;
+}
+
+.house_management>view {
+  width: 100%;
+  height: 300rpx;
+  margin-top: 20rpx;
+}
+
+.house_management>view:last-child {
+  margin-bottom: 120rpx;
+}
+
+.back_img {
+  width: 100%;
+  height: 100%;
+}
+
+.house_management>view>view {
+  width: 100%;
+  height: 100%;
+}
+
+.house_management>view>view:nth-child(1) {
+  z-index: 500;
+}
+
+.house_management>view>view:nth-child(2) {
+  z-index: 50000;
+}
+
+.many_body>view:nth-child(1) {
+  width: 100%;
+  height: 50rpx;
+  line-height: 50rpx;
+  color: #fff;
+  font-size: 28rpx;
+  text-indent: 30rpx;
+  padding: 20rpx 0;
+}
+
+.many_body>view:nth-child(2) {
+  width: 100%;
+  height: 50rpx;
+  line-height: 50rpx;
+  color: #fff;
+  font-size: 32rpx;
+  margin-top: 5rpx;
+  text-align: center;
+}
+
+.many_body>view:nth-child(3) {
+  width: 100%;
+  height: 50rpx;
+  line-height: 50rpx;
+  color: #000;
+  font-size: 32rpx;
+  margin-top: 70rpx;
+  /* text-align: center; */
+}
+
+.many_head text:nth-child(1) {
+  padding: 10rpx 30rpx;
+  color: #fff;
+  margin-right: 20rpx;
+  border-radius: 50rpx;
+}
+
+.back_two {
+  background: rgb(118, 133, 200);
+}
+
+.back_one {
+  background: rgb(152, 140, 211);
+}
+
+.price text:nth-child(1) {
+  font-size: 30rpx;
+}
+
+.price text:nth-child(2) {
+  font-size: 50rpx;
+}
+
+.operation>view {
+  width: 180rpx;
+  color: #999;
+  height: 100%;
+  float: right;
+}
+
+.operation>view image {
+  width: 40rpx;
+  margin-right: 10rpx;
+  height: 40rpx;
+}
+
+/* .operation>view:nth-child(1){
+  float: left;
+} */
+
+.operation>view view:nth-child(1) {
+  float: left;
+}

@@ -1,0 +1,86 @@
+<!--pages/content/content.wxml-->
+<view class="container">
+  <view class='top'>
+    <image mode='aspectFill' src='{{url}}{{platform.bj_logo}}'></image>
+  </view>
+  <view class='bottom'>
+    <view class='flex3'>
+      <view class='indexbox'>
+        <view class='isearch'>
+          <view class='flex_center'>
+            <image class='isearchimg' src='../img/sousuo.png'></image>
+            <input disabled='true' bindtap='search' placeholder='请输入{{platform.jd_custom}}名/关键字' type='text'></input>
+          </view>
+        </view>
+        <view class='icontent'>
+
+          <view class='flex3 iconleft'>
+            <view class='iconnum'>{{time}}天</view>
+            <view class='iconfont1'>
+              <picker mode="date"  start="{{start}}" end="{{end}}" bindchange="bindDateChange1">
+                <view class="iconfont1" style='color:{{color}}'>{{datein}}</view>
+              </picker>
+            </view>
+            <view>入住日期</view>
+          </view>
+          <view class='flex3 iconrit'>
+            <view class='iconfont1'>
+              <picker mode="date"  start="{{start}}" end="{{end}}" bindchange="bindDateChange2">
+                <view class="iconfont1" style='color:{{color}}'>{{dateout}}</view>
+              </picker>
+            </view>
+            <view>退房日期</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class='top_sort'>
+      <view>
+        <view bindtap='Recommend'>
+          <text wx:if="{{Recommend==2}}">推荐排序</text>
+          <text wx:if="{{Recommend==1}}" style='color:{{color}}'>推荐排序</text>
+        </view>
+        <view bindtap='price_sorting'>
+          <text wx:if="{{price_sorting==0}}">价格排序</text>
+          <text wx:if="{{price_sorting==2}}" style='color:{{color}}'>价格排序↑</text>
+          <text wx:if="{{price_sorting==1}}" style='color:{{color}}'>价格排序↓</text>
+        </view>
+        <view bindtap='nearby'>
+          <text wx:if="{{nearby==0}}">距离排序</text>
+          <text wx:if="{{nearby==2}}" style='color:{{color}}'>距离排序↑</text>
+          <text wx:if="{{nearby==1}}" style='color:{{color}}'>距离排序↓</text>
+        </view>
+      </view>
+    </view>
+     <!-- <view class='rel timg' wx:if="{{timg==false}}">
+      <image class='ab udlr' mode='aspectFill' src='../img/load.gif'></image>
+    </view>  -->
+    <view class='hotel_info' bindtap='conlist' wx:for="{{hotel}}" data-id='{{item.id}}'>
+      <view class='info_left'>
+        <image mode='aspectFill' src='{{url}}{{item.ewm_logo}}'></image>
+      </view>
+      <view class='info_right'>
+        <view class='infritbox info_right1'>{{item.name}}</view>
+        <view class='flex_bet info_right2'>
+          <view class='flex_center'>
+            <image class='iconaddress' src='../img/didian.png'></image>
+            <view class='ritfont1'>{{item.address}}</view>
+          </view>
+          <view>
+            <text class='ritfont2' style='color:{{color}}'>¥</text>
+            <text class='ritfont3' style='color:{{color}}'>{{item.zd_money}}</text>
+            <text class='ritfont4'>起</text>
+          </view>
+        </view>
+        <view class='flex_center'>
+          <image mode='aspectFill' class='iconaddress' src='../img/dizhi.png'></image>
+          <view class='ritfont1'>距离你{{item.distance}}km</view>
+        </view>
+      </view>
+    </view>
+    <view style='width:100%;height:0;'></view>
+    <view class='none_more' wx:if="{{none_more==true}}">---------------没有更多了---------------</view>
+  </view>
+
+</view>

@@ -1,0 +1,46 @@
+<!--zh_jd/pages/coupon/coupon.wxml-->
+<view class='container fon rel'>
+  <view class='header ab'>
+    <view class='background ab' style="background:{{color}}"></view>
+    <view class='option rel'>
+      <view class='option_son ab udlr'>
+        <view class="{{seletive_index == index?'effective':'default'}}" wx:for="{{item}}" wx:key="*this" bindtap='seletive_index' data-index='{{index}}'>
+          {{item}}
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='users' wx:if="{{price!=null}}" bindtap='not_user'>不使用优惠券</view>
+  <view class='none_coupon' wx:if="{{unreceive.length==0}}">
+    <view>
+      <image mode='aspectFill' src="../img/fotel.png"></image>
+      <view wx:if="{{index==0}}">暂无可用的优惠券</view>
+      <view wx:if="{{index==1}}">暂无已使用的优惠券</view>
+      <view wx:if="{{index==2}}">暂无过期的优惠券</view>
+    </view>
+  </view>
+  <view class='coupons_son rel' wx:for="{{unreceive}}" wx:key="{{item.value}}">
+    <view class='ab'>
+      <image mode='aspectFill' src='../img/youhuij@2x.png'></image>
+    </view>
+    <view class='son_left'>
+      <view>
+        <text>￥</text>
+        <text>{{item.cost}}</text>
+      </view>
+      <view wx:if="{{item.conditions!=''}}">满{{item.conditions}}可用</view>
+      <view wx:else>满任意金额可用</view>
+    </view>
+    <view class='son_right'>
+      <view>{{item.name}}</view>
+      <view class='gobyndsingle'>{{item.introduce}}</view>
+      <view>{{item.start_time}}至{{item.end_time}}</view>
+    </view>
+    <view class='not_user ab' wx:if="{{seletive_index==0}}">
+      <text bindtap='receive' wx:if="{{price==null}}" id="{{item.seller_id}}" style='background:{{color}}'>去使用</text>
+      <text style='background:#ccc' wx:if="{{price!=null&&hotel_id!=item.seller_id&&item.type==2}}">无法使用</text>
+      <text bindtap='receive_coupon' data-money="{{item.cost}}" data-condition="{{item.conditions}}" id="{{item.id}}" wx:if="{{price!=null&&hotel_id!=item.seller_id&&item.type==1}}" style='background:{{color}}'>使用</text>
+      <text bindtap='receive_coupon' data-money="{{item.cost}}" data-condition="{{item.conditions}}" id="{{item.id}}" wx:if="{{price!=null&&hotel_id==item.seller_id}}" style='background:{{color}}'>使用</text>
+    </view>
+  </view>
+</view>

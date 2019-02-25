@@ -1,0 +1,47 @@
+<view class='eject_box'>
+  <view class='eject_swiper' wx:if="{{room.img.length>0}}">
+    <swiper autoplay="auto" interval="5000" indicator-dots="true" duration="500" current="{{swiperCurrent1}}" bindchange="swiperChange1" class="swiper">
+      <block wx:for="{{room.img}}" data-item="{{img}}" wx:key="{{item.value}}" wx:if="{{room.img.length>0}}">
+        <swiper-item>
+          <image bindtap='previewImage' data-index='{{index}}' mode="aspectFill" src="{{url}}{{item}}" class="img"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class='eject_room' bindtap='setclip'>
+    <view class='eject_type'>{{room.name}}</view>
+    <view class='eject_type' style='color:{{color}};height:50rpx;line-height:50rpx;font-size:30rpx'>价格：{{price}}/晚</view>
+  </view>
+  <view class='seller_info'>
+    <view class='tel' bindtap='phone'>
+      <view class='rel'>
+        <image class='ab udlr' mode='aspectFit' src='../img/dianhua.png'></image>
+      </view>
+      <view>{{tel}}</view>
+    </view>
+    <view class='address' bindtap='dizhi'>
+      <view class='rel'>
+        <image class='ab udlr' mode='aspectFit' src='../img/dizhi.png'></image>
+      </view>
+      <view>{{address}}</view>
+    </view>
+  </view>
+  <view class='eject_room eject_floor'>
+    <text>基本信息</text>
+    <view>楼层：{{room.floor}}</view>
+    <view>可住人数:{{room.people}}人</view>
+    <view>大床:{{room.size}}米</view>
+    <view wx:if="{{room.yj_cost!=0}}">押金:{{room.yj_cost}}</view>
+    <view wx:if="{{room.windows==0}}">无窗户</view>
+    <view wx:if="{{room.windows==1}}">有窗户</view>
+    <view wx:if="{{room.bed==0}}">不可加床</view>
+    <view wx:if="{{room.bed==1}}">可加床</view>
+    <view wx:if="{{room.breakfast==1}}">有早餐</view>
+    <view wx:if="{{room.breakfast==0}}">无早餐</view>
+  </view>
+  <view class='eject_room' style='border:none;'>
+    <view class='eject_type'>房间设施</view>
+    <view class='eject_font' wx:if="{{room.facilities!=''}}">{{room.facilities}}</view>
+    <view class='eject_font' wx:if="{{room.facilities==''}}">暂无</view>
+  </view>
+</view>

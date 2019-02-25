@@ -1,0 +1,109 @@
+/* zh_jdgjb/pages/register/register.wxss */
+page{
+  width: 100%;
+  height: 100%;
+}
+.fixed>view>image{
+  width: 100%;
+  height: 100%;
+  background: #000;
+}
+.register{
+  width: 100%;
+  height: 100%;
+}
+.img1{
+  width: 170rpx;
+  height: 170rpx;
+  border-radius: 50%;
+  margin: 0 auto 0;
+  display: block;
+}
+.register>view:nth-child(1){
+  width: 100%;
+  height: 200rpx;
+  margin-top: 90rpx;
+}
+.register>view:nth-child(2){
+  width: 100%;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 40rpx;
+  color: #fff;
+}
+.register>view:nth-child(3){
+  width: 80%;
+  margin: 0 auto 0;
+  height: auto;
+  margin-top: 60rpx;
+}
+.register>view:nth-child(4){
+  width: 80%;
+  text-align: center;
+  color: #fff;
+  margin: 70rpx auto 0;
+  background: #3b9cf8;
+  border-radius: 100rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 33rpx;
+}
+.img2{
+  width: 40rpx;
+  height: 40rpx;
+}
+.img3{
+  width: 40rpx;
+  height: 55rpx;
+}
+.img4{
+  width: 44rpx;
+  height: 44rpx;
+}
+.info>view{
+  width: 100%;
+  height: 80rpx;
+  line-height: 60rpx;
+  border-bottom: 2rpx solid #ced4bb;
+}
+.info>view:nth-child(2){
+  margin-top: 30rpx;
+}
+.info>view:nth-child(3){
+  margin-top: 30rpx;
+}
+.info>view view{
+  display: inline-block;
+  vertical-align: middle;
+}
+.info>view view:nth-child(1){
+  height: 60rpx;
+}
+.info>view view:nth-child(2){
+  width: 86%;
+  margin-left: 20rpx;
+  height: 60rpx;
+}
+.info>view view input{
+  width:60%;
+  height: 60rpx;
+  line-height: 40rpx;
+  color: #fcf8f5;
+}
+.info>view view text{
+  color: #fcf8f5;
+  right: 0;
+  font-size: 24rpx;
+}
+button{
+  margin: 0;
+  padding: 0;
+  font-size: 24rpx;
+  right: 0;
+  background: none;
+  color: #fcf8f5;
+}
+button::after{
+  border: none;
+}

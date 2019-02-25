@@ -1,0 +1,19 @@
+<view class='head rel'>
+  <textarea bindinput='textarea' maxlength='500' placeholder='请输入您对该{{platform.jd_custom}}的评价'></textarea>
+  <view>
+    <view wx:for="{{imgArray1}}" class='evaluate_img rel'>
+      <image class='evaluate' mode='aspectFill' src='{{item}}'></image>
+      <view class='ab' bindtap='delete' data-index='{{index}}'>
+        <view class='ab'></view>
+        <view class='ab'>
+          <image class='ab udlr' mode='aspectFill' src='../img/delete.png'></image>
+        </view>
+      </view>
+    </view>
+    <view bindtap='img_array' class='add_img rel'>
+      <image class='ab udlr' mode='aspectFill' src='../img/add.png'></image>
+    </view>
+  </view>
+  <view class='ab'>{{length}}/500</view>
+</view>
+<button bindtap='submit' style='background:{{color}}'>提交</button>

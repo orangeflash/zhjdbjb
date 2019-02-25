@@ -1,0 +1,28 @@
+<view class='coupons_son rel' style='border-bottom-color:inherit' wx:for="{{unreceive}}" wx:key="{{item.value}}">
+  <view class='ab'>
+    <image mode='aspectFill' src='../img/youhuij@2x.png'></image>
+  </view>
+  <view class='son_left'>
+    <view>
+      <text>￥</text>
+      <text>{{item.cost}}</text>
+    </view>
+    <view wx:if="{{item.conditions!=''}}">满{{item.conditions}}可用</view>
+    <view wx:else>满任意金额可用</view>
+  </view>
+  <view class='son_right'>
+    <view>{{item.name}}</view>
+    <view> </view>
+    <view>{{item.start_time}}至{{item.end_time}}</view>
+  </view>
+  <view class='not_user ab'>
+    <text bindtap='receive' id="{{item.id}}" style='background:{{color}}'>领取</text>
+  </view>
+</view>
+<!--暂无优惠券  -->
+<view class='none_coupon' wx:if="{{unreceive.length==0}}">
+  <view>
+    <image mode='aspectFill' src="../img/fotel.png"></image>
+    <view>暂无可领取的优惠券</view>
+  </view>
+</view>

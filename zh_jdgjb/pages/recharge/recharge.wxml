@@ -1,0 +1,47 @@
+<view class='head rel'>
+  <!-- <image mode='aspectFill' src='../img/recharge.png'></image> -->
+    <swiper interval="3000" duration="800" autoplay="true" indicator-dots="true" indicator-color="#ccc" circular="true" indicator-active-color="#182E8F">
+        <block wx:for="{{getad}}" wx:key="*this">
+          <swiper-item>
+            <image bindtap='skip' data-appid='{{item.appid}}' data-wb_src='{{item.wb_src}}' data-src='{{item.src}}' mode='aspectFill' src="{{url}}{{item.logo}}" class="slide-image"/>
+          </swiper-item>
+        </block>
+      </swiper> 
+  <view class='ab' wx:if="{{Czhd.length>0}}">
+    <image mode='aspectFill' src='../img/laba.png'></image>
+    <view class='gobyndsingle'>
+      <swiper class="swiper_container" vertical="true" autoplay="true" circular="true" interval="2000">
+        <block wx:for="{{Czhd}}">
+          <swiper-item>
+            满{{item.full}}送{{item.reduction}}
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <image class='ab ud' mode='aspectFill' src='../../img/right.png'></image>
+  </view>
+    <view class='ab'></view>
+</view>
+<view class='input'>
+  <view>
+    当前余额
+  </view>
+  <view>
+    <input disabled='true' placeholder='' value='￥{{userInfo.balance}}'></input>
+  </view>
+</view>
+<view class='input'>
+  <view>
+    充值金额
+  </view>
+  <view>
+    <input placeholder='请输入充值金额' bindinput='money'></input>
+  </view>
+</view>
+<view class='input rel' bindtap='jilu'>
+  <view>
+    充值记录
+  </view>
+  <image class='ab ud' style='right:20rpx;' mode='aspectFill' src='../img/acright.png'></image>
+</view>
+<button bindtap='chongzhi' style='background:{{color}}'>充值</button>

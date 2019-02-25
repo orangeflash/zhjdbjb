@@ -1,0 +1,76 @@
+<!--pages/jifen/jifeninfo.wxml-->
+<view class='home'>
+  <view class='info'>
+    <image mode='aspectFill' src='{{url}}{{goods_detail.img}}'></image>
+  </view>
+  <view class='infoheader'>
+    <view class='flex_center'>
+      <view class='jflabel' wx:if="{{goods_detail.type==2}}">实物</view>
+      <view class='jflabel2' wx:else>虚拟</view>
+      <view class='infoname'>{{goods_detail.name}}</view>
+    </view>
+    <view>
+      <text class='goodsfont1'>{{goods_detail.score}}</text>
+      <text class='goodsfont2'>积分</text>
+    </view>
+    <!-- <view class='flex_bet jffahuo'>
+      <view class='goodsfont3'>市场价¥3000.00</view>
+      <view>免运费</view>
+      <view>由苏州发货</view>
+    </view> -->
+    <view class='jflimit' wx:if="{{clock!='已经截止'}}">距离兑换结束还有：{{clock}}</view>
+    <view class='jflimit' wx:else>兑换已经结束</view>
+  </view>
+  <view class='infolist flex_center' wx:if="{{goods_detail.type==2}}">
+    <!-- <view class='infoxian'></view> -->
+    <view style='font-size:32rpx;font-weight:bold'>配送地址</view>
+  </view>
+  <view class='flex_bet infobox' bindtap='select_address' wx:if="{{edit==false&&goods_detail.type==2}}">
+    <view>您还选择收货地址，马上去</view>
+    <image class='inforit' src='../img/acright.png'></image>
+  </view>
+  <view class='address_info'  wx:if="{{edit==true&&goods_detail.type==2}}" bindtap='select_address'>
+    <view>
+      收货人姓名:{{name}}
+    </view>
+    <view>
+      收货人电话:{{tel}}
+    </view>
+    <view>
+      收货人地址:{{address}}
+    </view>
+  </view>
+  <view class='infolist flex_center'>
+    <view class='infoxian'></view>
+    <view>详细说明：</view>
+  </view>
+  <view class='inforemark'>
+    <view class='refont1'>活动规则：</view>
+    <view>
+      <rich-text nodes="{{goods_detail.attention_details}}"></rich-text>
+    </view>
+    <view class='refont2'>详情说明：</view>
+    <view>
+      <rich-text nodes="{{goods_detail.goods_details}}"></rich-text>
+    </view>
+    <view class='refont2'>兑换流程：</view>
+    <view>
+      <rich-text nodes="{{goods_detail.process_details}}"></rich-text>
+    </view>
+  </view>
+  <!-- 
+  <view class='infolist flex_center'>
+    <view class='infoxian'></view>
+    <view>详细说明：</view>
+  </view>
+  <view class='infoimg'>
+  </view> -->
+
+  <view class='infootbox'></view>
+  <view class='infoot'>
+    <button class='infobutton' wx:if="{{clock=='已经截止'}}">兑换已经结束</button>
+    <button class='infobutton' wx:if="{{scores<score&&clock!='已经截止'}}">积分不足</button>
+    <button class='infobutton' bindtap='exchange' style='background:{{color}}' wx:if="{{scores>=score&&clock!='已经截止'&&goods_detail.number>0}}">立即兑换</button>
+    <button class='infobutton' wx:if="{{scores>=score&&clock!='已经截止'&&goods_detail.number<=0}}">库存不足</button>
+  </view>
+</view>

@@ -1,0 +1,81 @@
+<view class='home'>
+  <!--————开屏广告——————  -->
+   <view class='bomb' wx:if="{{bomb==true&&rande==1}}">
+    <view class='bombox'>
+       <swiper interval="3000" duration="800" autoplay="true" indicator-dots="true" indicator-color="#ccc" circular="true" indicator-active-color="#182E8F">
+        <block wx:for="{{getad}}" wx:key="*this">
+          <swiper-item>
+            <image bindtap='skip' data-appid='{{item.appid}}' data-wb_src='{{item.wb_src}}' data-src='{{item.src}}' mode='aspectFill' src="{{url}}{{item.logo}}" class="slide-image"/>
+          </swiper-item>
+        </block>提      </swiper> 
+      <view class='shanchu' bindtap='guanbi'>×</view>
+    </view>
+  </view> 
+  <view class='indexdi'>
+    <image mode='aspectFill' src='{{url}}{{platform.bj_logo}}'></image>
+  </view>
+  <view class='indexup flex3'>
+    <view class='indexbox'>
+      <view class='isearch' wx:if="{{platform.type==2}}">
+        <view class='flex_center isearchleft' bindtap='search'>
+          <image class='isearchimg' src='../img/sousuo.png'></image>
+          <input disabled='true' placeholder='请输入{{platform.jd_custom}}名/关键字'></input>
+        </view>
+        <view class='flex1 isearchrit' bindtap='location'>
+          <image class='isearchimg2' src='../img/didian.png'></image>
+          <view  style='color:{{color}}'>附近</view>
+        </view>
+      </view>
+      <view class='icontent'>
+        <view class='iconnum'>{{time}}天</view>
+        <view class='flex3 iconleft'>
+          <picker mode="date" value="{{datein}}" start="{{start}}" end="{{end}}" bindchange="bindDateChange1">
+            <view class="iconfont1" style='color:{{color}}'>{{datein}}</view>
+          </picker>
+          <view>入住日期</view>
+        </view>
+        <view class='flex3 iconrit'>
+          <picker mode="date" bindchange="bindDateChange2" start="{{start}}" end="{{end}}" >
+            <view class="iconfont1" style='color:{{color}}'>{{dateout}}</view>
+          </picker>
+          <view>退房日期</view>
+        </view>
+      </view>
+      <view wx:if="{{time>0}}" bindtap='content' class='iconbutton sure' style='background:{{color}}'>
+          <button wx:if="{{platform.type==2}}"   bindgetuserinfo="bindGetUserInfo">查询{{platform.jd_custom}}</button>
+          <button wx:else  bindgetuserinfo="bindGetUserInfo">查询{{platform.jd_custom}}</button>
+      </view>
+      <view wx:if="{{time<=0}}" class='iconbutton none' style='background:{{color}}'>
+          <button  wx:if="{{platform.type==2}}" bindgetuserinfo="bindGetUserInfo">查询{{platform.jd_custom}}</button>
+          <button  wx:else bindgetuserinfo="bindGetUserInfo">查询{{platform.jd_custom}}</button>
+      </view>
+    </view>
+  </view>
+   <view class='footban'></view> 
+   <view class='ibanner'>
+    <view class='flex3' wx:for="{{nav}}" wx:key="*this" bindtap='skip' data-appid='{{item.appid}}' data-wb_src='{{item.wb_src}}' data-src='{{item.src}}'>
+      <image mode='aspectFill' class='ibanimg' src='{{url}}{{item.logo}}'></image>
+      <view class='ibanzname gobyndsingle'>{{item.title}}</view>
+    </view>
+  </view> 
+
+  <view class='foot'>
+    <view class='footbox flex3'>
+      <image src='../img/yuding@2x.png'></image>
+      <view class='footfont1'>预订</view>
+    </view>
+    <view class='footbox flex3' bindtap='wode'>
+      <image src='../img/wo@2x.png'></image>
+      <view>我的</view>
+    </view>
+  </view>
+  <view class='copyright' style='margin-bottom:100rpx;' bindtap='copyright'>
+    <image mode='aspectFill' src='{{url}}{{platform.bq_logo}}'></image>
+    {{platform.bq_name}}
+  </view>
+</view>
+<!-- <open-data type="userAvatarUrl"></open-data>
+<open-data type="userNickName"></open-data> -->
+<!-- <view class='load rel' wx:else>
+  <image class='ab udlr' mode='aspectFill' src='../img/load.gif'></image>
+</view> -->

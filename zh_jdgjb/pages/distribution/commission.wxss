@@ -1,0 +1,35 @@
+.head{
+  height: auto;
+  padding: 50rpx 0;
+  background: #fff;
+}
+.head>image{
+  width: 200rpx;
+  height: 150rpx;
+  display: block;
+  margin: 0 auto 0;
+}
+.head>view:nth-child(2){
+  text-align: center;
+  font-size: 28rpx;
+}
+.head>view:nth-child(3){
+  text-align: center;
+  font-size: 85rpx;
+}
+.body{
+  margin-top: 40rpx;
+  background: #fff;
+}
+.body>view{
+  padding: 0 20rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-bottom: 2rpx solid #e5e5e5;
+}
+.body>view text:nth-child(1){
+  float: left;
+}
+.body>view text:nth-child(2){
+  float: right;
+}

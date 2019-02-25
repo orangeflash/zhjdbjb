@@ -1,0 +1,98 @@
+<!--zh_jd/pages/check/check.wxml-->
+<form bindsubmit="formSubmit" report-submit="true" bindreset="formReset">
+  <view class='container'>
+    <view class='header'>
+    </view>
+    <view class='detailed'>
+      <view>
+        <view class='hotel_name border1'>
+          <view class='total fl'>{{platform.jd_custom}}名称</view>
+          <view class='input fl'>
+            <input name='hotel_name' placeholder='请输入{{platform.jd_custom}}名称'></input>
+          </view>
+        </view>
+        <view class='hotel_name' bindtap='choose_address'>
+          <view class='total fl'>具体地址</view>
+          <view class='input fl'>
+            <input name='hotel_address' disabled='true' placeholder='请选择{{platform.jd_custom}}具体地址' value='{{address}}'></input>
+          </view>
+        </view>
+        <view class='hotel_name'>
+          <view class='total fl'>联系人</view>
+          <view class='input fl'>
+            <input name="hotel_contacts" placeholder='请输入{{platform.jd_custom}}联系人姓名'></input>
+          </view>
+        </view>
+        <view class='hotel_name'>
+          <view class='total fl'>{{platform.jd_custom}}电话</view>
+          <view class='input fl'>
+            <input name="hotel_tel" type='digit' class='hotel_tel' placeholder='请输入{{platform.jd_custom}}电话'></input>
+          </view>
+        </view>
+        <view class='hotel_name border2'>
+          <view class='total fl'>{{platform.jd_custom}}星级</view>
+          <picker bindchange="bindPickerChanges" value="{{index}}" range="{{arrays}}">
+            <view class='input fl'>
+              {{arrays[index]}}
+            </view>
+          </picker>
+        </view>
+        <view class='upload'>
+          <view class='upload_head'>上传营业执照与负责人身份证正反面图片
+          </view>
+          <view class='upload_img'>
+            <view class='rel'>
+              <view class='ab udlr' bindtap='choose' data-id='1'>
+                <image class='im ab udlr' wx:if="{{upload_one==null}}" src='../img/yingye@2x.png'></image>
+                <image class='img' mode='aspectFill' wx:if="{{upload_one!=null}}" src='{{url}}{{upload_one}}'></image>
+              </view>
+            </view>
+            <view class='rel'>
+              <view class='ab udlr' bindtap='choose' data-id='2'>
+                <image class='im ab udlr' wx:if="{{upload_two==null}}" src='../img/zhenmian@2x.png'></image>
+                <image class='img' mode='aspectFill' wx:if="{{upload_two!=null}}" src='{{url}}{{upload_two}}'></image>
+              </view>
+            </view>
+            <view class='rel'>
+              <view class='ab udlr' bindtap='choose' data-id='3'>
+                <image class='im ab udlr' wx:if="{{upload_three==null}}" src='../img/fanmian@2x.png'></image>
+                <image class='img' mode='aspectFill' wx:if="{{upload_three!=null}}" src='{{url}}{{upload_three}}'></image>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class='verification border1'>验证真实性</view>
+        <view class='hotel_name' style='margin-top:-2rpx;'>
+          <view class='total fl'>手机号</view>
+           <view class='input fl'  wx:if="{{platform.is_dxyz==1}}">
+            <input name='yz_tel' type='number' bindinput="user_tel" placeholder='请输入您的手机号'></input>
+          </view> 
+           <view class='input rel fl' wx:if="{{platform.is_dxyz==2}}">
+            <input disabled='true' name='yz_tel' value='{{phone}}' placeholder='手机号验证'></input>
+            <button class='ab ud' style='background:{{color}}' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">手机号验证</button>
+          </view> 
+        </view>
+         <view class='hotel_name rel border2'  wx:if="{{platform.is_dxyz==1}}">
+          <view class='total fl'>验证码</view>
+          <view class='input fl'>
+            <input name='yz_code' bindinput="verification_code" placeholder='请输入验证码'></input>
+          </view>
+          <view class='ab code' wx:if="{{getmsg=='获取验证码'}}" bindtap='sendmessg'  style='background:{{color}}'>
+            {{getmsg}}
+          </view>
+          <view class='ab code' wx:if="{{getmsg!='获取验证码'}}" bindtap='sendmessg'  style='background:#e5e5e5;color:{{color}}'>
+            {{getmsg}}
+          </view>
+        </view> 
+        <view class='verification border1'>其他补充</view>
+        <view class='supplement border2'>
+          <textarea name="textarea" placeholder='如您有其他补充,请在这里输入'></textarea>
+        </view>
+        <view class='footer'>
+          <button form-type="submit" wx:if="{{num==0}}" style='background:{{color}}'>提交入驻审核</button>
+          <button wx:else style='background:{{color}}'>提交入驻审核</button>
+        </view>
+      </view>
+    </view>
+  </view>
+</form>

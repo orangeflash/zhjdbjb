@@ -1,0 +1,128 @@
+<!--logs.wxml-->
+<view class='home'>
+  <view class='lheader rel flex_center' style='background:{{color}}'>
+    <!-- <image class='logsimg' src='{{userInfo.img}}'></image> -->
+    <view style='width:50rpx;'></view>
+    <view class='logsimg'>
+      <open-data class='logsimg' type="userAvatarUrl"></open-data>
+    </view>
+
+    <view bindtap='user_zhuce'>
+      <view>
+        <open-data type="userNickName"></open-data>
+      </view>
+      <view class="hydj">
+        <image src='../img/vipfill.png'></image>
+        <text>{{level_name}}</text>
+      </view>
+    </view>
+    <!-- <view class='flex_bet hjifen' bindtap='score_detail'>
+      <image class='hjifenimg' src='../img/kefu.png'></image>
+      <view>{{score}}积分</view>
+      <image class='hright' src='../img/acright.png'></image>
+    </view> -->
+    <view class='combination ab'>
+      <view class='t_c mar_t' bindtap='recharge'>
+        <view>{{balance}}</view>
+        <view>余额</view>
+      </view>
+      <view class='t_c' bindtap='score_detail'>
+        <view>{{score}}</view>
+        <view>积分</view>
+      </view>
+      <view class='t_c' bindtap='coupon'>
+        <view>{{coupon_length}}</view>
+        <view>优惠券</view>
+      </view>
+    </view>
+  </view>
+  <view class='lorder' style='margin-top:150rpx;'>
+    <view class='flex3' bindtap='mine_order' data-index='0' data-status="0">
+      <image class='lorderimg' src='../img/dindan@2x.png'></image>
+      <view>全部订单</view>
+    </view>
+    <view class='flex3' bindtap='mine_order' data-index='1' data-status="1">
+      <image class='lorderimg' src='../img/daifukuan@2x.png'></image>
+      <view>待付款</view>
+    </view>
+    <view class='flex3' bindtap='mine_order' data-index='2' data-status="10">
+      <image class='lorderimg' src='../img/daifuzhu@2x.png'></image>
+      <view>待入住</view>
+    </view>
+  </view>
+
+  <view class='lbanner'>
+    <view class='lbanlist' bindtap='receive_coupon'>
+      <view>领取优惠券</view>
+      <image class='lbannerimg' src='../img/acright.png'></image>
+    </view>
+    <view class='lbanlist' bindtap='coupon'>
+      <view>我的优惠券</view>
+      <image class='lbannerimg' src='../img/acright.png'></image>
+    </view>
+    <view class='lbanlist' bindtap='distribution' wx:if="{{GetFxSet.is_open==1}}">
+      <view>分销中心</view>
+      <image class='lbannerimg' src='../img/acright.png'></image>
+    </view>
+    <view class='lbanlist' bindtap='recharge'>
+      <view>充值中心</view>
+      <image class='lbannerimg' src='../img/acright.png'></image>
+    </view>
+    <view class='lbanlist' bindtap='integral' wx:if="{{platform.is_score==1}}">
+      <view>积分商城</view>
+      <image class='lbannerimg' src='../img/acright.png'></image>
+    </view>
+    <view class='lbanlist' bindtap='user_zhuce' wx:if="{{platform.open_member==1}}">
+      <view>会员中心</view>
+      <image class='lbannerimg' src='../img/acright.png'></image>
+    </view>
+    <view class='lbanlist' bindtap='service'>
+      <view>联系客服</view>
+      <image class='lbannerimg' src='../img/acright.png'></image>
+    </view>
+    <view class='lbanlist' bindtap='seller_manage'>
+      <view>商家管理</view>
+      <image class='lbannerimg' src='../img/acright.png'></image>
+    </view>
+    <view class='lbanlist' bindtap='settled_store' wx:if="{{state==false&&platform.is_sjrz==2}}">
+      <view>合作加盟</view>
+      <image class='lbannerimg' src='../img/acright.png'></image>
+    </view>
+    <view class='lbanlist rel' style='margin-bottom:100rpx;'>
+      <view>授权设置</view>
+      <image class='lbannerimg' src='../img/acright.png'></image>
+      <button class='ab ud' open-type='openSetting' wx:if="{{users==true}}"></button>
+      <button class='ab ud' open-type='getUserInfo' bindgetuserinfo="bindGetUserInfo" wx:else></button>
+    </view>
+  </view>
+  <view class='copyright' bindtap='copyright'>
+    <image mode='aspectFill' src='{{url}}{{platform.bq_logo}}'></image>
+    {{platform.bq_name}}
+  </view>
+
+
+
+
+  <!-- <view class='footban'></view> -->
+  <view class='foot'>
+    <view class='footbox flex3' bindtap='home'>
+      <image src='../img/yudingg@2x.png'></image>
+      <view>预订</view>
+    </view>
+    <view class='footbox flex3'>
+      <image src='../img/wode@2x.png'></image>
+      <view class='footfont1'>我的</view>
+    </view>
+  </view>
+</view>
+<view class='authorization fixed' wx:if="{{users==false}}">
+  <view class='ab'>
+  </view>
+  <view class='ab udlr'>
+    <view class='hydl'>
+      <icon type='success' size='50'></icon>
+      <view>欢迎登录</view>
+    </view>
+    <button open-type='getUserInfo' bindgetuserinfo="bindGetUserInfo">+微信登录</button>
+  </view>
+</view>

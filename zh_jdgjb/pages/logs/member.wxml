@@ -1,0 +1,54 @@
+<!--zh_vip/pages/my/hykxq.wxml-->
+<view class='head'>
+  <view class='headleft' bindtap='last' wx:if="{{dqdj>0}}">
+    <view>上一等级</view>
+    <image src='../../img/leftjt.png'></image>
+  </view>
+  <view class='headbd'>
+    <swiper class='swiper' current="{{dqdj}}" bindchange='swiperchange'>
+      <swiper-item wx:for="{{navs}}">
+        <image class='swiperimg' src='{{url}}{{item.icon}}'></image>
+        <view class='dqdj' wx:if="{{userInfo.level_id==item.id}}">当前等级</view>
+        <view class='userinfo flex-center'>
+          <image src='{{userInfo.img}}'></image>
+          <view>{{userInfo.name}}</view>
+        </view>
+        <view class='levelname'>vip等级：{{item.name}}</view>
+        <view class='hyknumber'>卡号：{{userInfo.number}}</view>
+      </swiper-item>
+    </swiper>
+  </view>
+  <view class='headleft1' bindtap='next' wx:if="{{dqdj<imgarr.length-1}}">
+    <view>下一等级</view>
+    <image src='../../img/rightjt.png'></image>
+  </view>
+</view>
+<view class='hysj' wx:if="{{userInfo.grade!='0'}}">
+  <view class='hysjview'>
+    <view class='djsm'>
+      <image src='../img/vipfill.png'></image>
+      <view wx:if="{{userInfo.level_id==0}}">初始会员</view>
+       <view wx:else>{{userInfo.level_name}}</view> 
+    </view>
+    <view class='jdt'>
+      <view>当前等级已消费{{level_cumulative}}元</view>
+      <progress active='true' show-info='true' activeColor='#FFC516' backgroundColor='#e5e5e5' color="#000" percent="{{speed}}" stroke-width="5"></progress>
+      <view wx:if="{{sjxfje!=''}}">升级需消费{{navs[dqdj].value}}元</view>
+      <view style='color:#FF9700' wx:else>您已成为最高级会员</view>
+    </view>
+    <view class='djsm' wx:if="{{Upgrade!=''}}">
+      <image src='../../img/vipkong.png'></image>
+      <view style='color:#999'>{{Upgrade.name}}</view>
+    </view>
+    <view class='djsm' wx:else>
+      <image src='../../img/zgjvip.png'></image>
+      <view style='color:#FF9700'>最高级</view>
+    </view>
+  </view>
+</view>
+<view class='tq'>
+  <view class='ndtq'>您的特权</view>
+</view>
+<view class='djtq'>
+  <rich-text nodes="{{navs[dqdj].content}}"></rich-text>
+</view>

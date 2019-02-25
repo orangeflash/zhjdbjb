@@ -1,0 +1,136 @@
+/* pages/jifen/jifeninfo.wxss */
+.info{
+  width: 100%;
+  height: 400rpx;
+}
+/* .info{
+  width: 100%;
+  height: 100%;
+} */
+.info image{
+  width: 100%;
+  height: 100%;
+}
+.infoheader{
+  background-color: white;
+  padding: 20rpx;
+}
+.jflabel{
+  color: white;
+  background-color: #F14949;
+  padding: 0rpx 8rpx;
+  width: 44rpx;
+  border-radius: 6rpx;
+  font-size: 22rpx;
+  margin-right: 15rpx;
+}
+.infoname{
+  font-size: 30rpx;
+}
+.goodsfont1{
+  color: #F14949;
+  font-weight: bold;
+  font-size: 32rpx;
+}
+.jflabel2{
+  color: white;
+  background-color: #A883FA;
+  padding: 0rpx 8rpx;
+  width: 50rpx;
+  border-radius: 6rpx;
+  font-size: 22rpx;
+  margin-right: 15rpx;
+}
+.goodsfont2{
+  font-size: 30rpx;
+  color: #F14949;
+}
+.jffahuo{
+  color: #999;
+  margin-top: 5rpx;
+  border-bottom: 1rpx solid #eee;
+  padding-bottom: 15rpx;
+}
+.goodsfont3{
+  text-decoration: line-through;
+}
+.jflimit{
+  padding-top: 20rpx;
+  color: #999;
+}
+.address_info{
+  padding: 20rpx;
+  background: #fff;
+}
+.address_info>view{
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 28rpx;
+  color: #666;
+  border-bottom: 2rpx solid #e5e5e5;
+}
+.address_info>view:last-child{
+  border: none;
+}
+.infolist{
+  background-color: white;
+  padding: 20rpx;
+  margin-top: 20rpx;
+  /* color: #999; */
+  border-bottom: 1rpx solid #eee;
+}
+.infoxian{
+  width: 7rpx;
+  background-color: #999;
+  height: 25rpx;
+  margin-right: 15rpx;
+}
+.infobox{
+  padding: 20rpx;
+  color: #999;
+  background-color: white;
+}
+.inforit{
+  width: 20rpx;
+  height: 35rpx;
+}
+.inforemark{
+  background-color: white;
+  padding: 20rpx 25rpx;
+}
+.refont1{
+  font-weight: bold;
+  margin-bottom: 15rpx;
+  font-size: 32rpx;
+}
+.refont2{
+  font-weight: bold;
+  margin-bottom: 15rpx;
+  margin-top: 15rpx;
+}
+.infoimg{
+  background-color: white;
+  padding: 20rpx 30rpx;
+}
+.infoot{
+  position: fixed;
+  bottom: 0rpx;
+  left: 0rpx;
+  width: 100%;
+  height: 100rpx;
+  z-index: 10;
+}
+.infobutton{
+  color: white;
+  background-color: #CCCCCC;
+  height: 100rpx;
+  line-height: 100rpx;
+  border: none;
+  border-radius: 0rpx;
+  width: 100%;
+}
+.infootbox{
+  width: 100%;
+  height: 130rpx;
+}

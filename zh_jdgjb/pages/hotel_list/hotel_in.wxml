@@ -1,0 +1,63 @@
+<view class='eject_box'>
+  <view class='eject_swiper'>
+    <swiper autoplay="auto" interval="5000" indicator-dots="true" duration="500" current="{{swiperCurrent1}}" bindchange="swiperChange1" class="swiper">
+      <block wx:for="{{hotel.img}}" data-item="{{img}}" wx:key="{{item.value}}" wx:if="{{hotel.img.length>0}}">
+        <swiper-item>
+          <image bindtap='previewImage' data-index='{{index}}' mode="aspectFill" src="{{url}}{{item}}" class="img"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class='eject_room' bindtap='setclip'>
+    <view class='eject_type'>{{hotel.name}}</view>
+    <view class='eject_type' style='color:{{color}};height:50rpx;line-height:50rpx;font-size:30rpx'>{{hotel.handle}}</view>
+  </view>
+  <view class='seller_info'>
+    <view class='tel' bindtap='phone'>
+      <view class='rel'>
+        <image class='ab udlr' mode='aspectFit' src='../img/dianhua.png'></image>
+      </view>
+      <view>{{hotel.tel}}</view>
+    </view>
+    <view class='address' bindtap='dizhi'>
+      <view class='rel'>
+        <image class='ab udlr' mode='aspectFit' src='../img/dizhi.png'></image>
+      </view>
+      <view class='gobyndsingle'>{{hotel.address}}</view>
+    </view>
+  </view>
+  <view class='eject_room eject_floor'>
+    <text>基本信息</text>
+    <view wx:if="{{hotel.wx_open==1}}">微信支付</view>
+    <view wx:if="{{hotel.dd_open==1}}">到店付</view>
+    <view wx:if="{{hotel.ye_open==1}}">余额支付</view>
+  </view>
+  <view class='eject_room' style='border:none;'>
+    <view class='eject_type'>{{platform.jd_custom}}简介</view>
+    <view class='eject_font' wx:if="{{hotel.introduction!=''}}">
+        <rich-text nodes="{{hotel.introduction}}"></rich-text>
+    </view>
+    <view class='eject_font' wx:if="{{hotel.introduction==''}}">暂无</view>
+  </view>
+  <view class='eject_room' style='border:none;'>
+    <view class='eject_type'>{{platform.jd_custom}}政策</view>
+    <view class='eject_font' wx:if="{{hotel.policy!=''}}">
+        <rich-text nodes="{{hotel.policy}}"></rich-text>
+    </view>
+    <view class='eject_font' wx:if="{{hotel.policy==''}}">暂无</view>
+  </view>
+  <view class='eject_room' style='border:none;'>
+    <view class='eject_type'>退订规则</view>
+    <view class='eject_font' wx:if="{{hotel.rule!=''}}">
+        <rich-text nodes="{{hotel.rule}}"></rich-text>
+    </view>
+    <view class='eject_font' wx:if="{{hotel.rule==''}}">暂无</view>
+  </view>
+  <view class='eject_room' style='border:none;'>
+    <view class='eject_type'>温馨提示</view>
+    <view class='eject_font' wx:if="{{hotel.prompt!=''}}">
+        <rich-text nodes="{{hotel.prompt}}"></rich-text>
+    </view>
+    <view class='eject_font' wx:if="{{hotel.prompt==''}}">暂无</view>
+  </view>
+</view>

@@ -1,0 +1,148 @@
+/* zh_vip/pages/my/hykxq.wxss */
+.head{
+  position: relative;
+  height: 400rpx;
+  width: 100%;
+}
+.flex-center{
+  display: flex;
+  align-items: center;
+}
+.headleft{
+  position: absolute;
+  left: 20rpx;
+  width: 30rpx;
+  height: 400rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+  font-size: 26rpx;
+  color: #999;
+}
+.headleft view{
+  text-align: center;
+}
+.headleft image{
+  width: 30rpx;
+  height: 30rpx;
+  margin-top: 20rpx;
+}
+.headleft1{
+  right: 20rpx;
+  position: absolute;
+  width: 30rpx;
+  height: 400rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 26rpx;
+  color: #999; 
+}
+.headleft1 view{
+  text-align: center;
+}
+.headleft1 image{
+  width: 30rpx;
+  height: 30rpx;
+  margin-top: 20rpx;
+}
+.headbd{
+  position: absolute;
+  width: 650rpx;
+  left: 50rpx;
+  top:0;
+  height: 400rpx;
+}
+.swiper{
+  width: 590rpx;
+  height: 340rpx;
+  margin: 30rpx;
+  color: #fff;
+}
+.swiperimg{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 20rpx;
+}
+.userinfo{
+  position: absolute;
+  top: 60rpx;
+  left: 60rpx;
+  border-radius: 50%;
+  font-size: 30rpx;
+}
+.userinfo image{
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 20rpx;
+  border-radius: 50%;
+}
+.levelname{
+  position: absolute;
+  top: 160rpx;
+  left: 60rpx;
+}
+.dqdj{
+  position: absolute;
+  top: 60rpx;
+  right: 30rpx;
+}
+.hyknumber{
+  position: absolute;
+  bottom: 30rpx;
+  left: 60rpx;
+  font-size: 26rpx;
+}
+.hysj{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 30rpx 30rpx 20rpx;
+  background: #fff;
+}
+.hysjview{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.djsm{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 25rpx;
+  color: #FFC516;
+}
+.djsm image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.jdt{
+  flex: 1;
+  font-size: 25rpx;
+  margin: 0 30rpx;
+}
+.jdt view{
+  text-align: center;
+  color: #999;
+}
+.tq{
+  padding: 20rpx;
+  margin-top: 30rpx;
+  background: #fff;
+}
+.ndtq{
+  font-size: 30rpx;
+  padding: 0 20rpx;
+  border-left: 10rpx solid #ff7f46;
+}
+.djtq{
+  padding: 20rpx;
+  background: #fff;
+}

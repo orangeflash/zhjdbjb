@@ -1,0 +1,175 @@
+<!--pages/content/contentlist.wxml-->
+<form bindsubmit="formSubmit" report-submit="true" bindreset="formReset">
+<view class='home'>
+  <view class='header' style='background:{{color}}'>
+    <view class='hcontent'>
+      <view class='hconbox'>
+        <image mode='aspectFill'  bindtap='hotel_in' data-id='{{hotel.id}}' class='ordizhi' src='{{url}}{{hotel.ewm_logo}}'></image>
+        <view>
+          <view class='hcfont1'>{{hotel.name}}</view>
+          <view class='hcfont2' bindtap='sele_address'>
+            <image src='../img/didian.png' class='conimg'></image>
+            <view>地址：{{hotel.address}}</view>
+          </view>
+          <view class='hcfont3 flex_center' bindtap='call_phone'>
+            <image src='../img/dianhua.png' class='conimg'></image>
+            <view>电话：{{hotel.tel}}</view>
+          </view>
+        </view>
+      </view>
+      <view class='icontent'>
+        <view class='flex3 iconleft'>
+          <view class='iconfont1'>
+            <picker mode="date" start="{{start}}" end="{{end}}" bindchange="bindDateChange1">
+              <view class="iconfont1" style='color:{{color}}'>{{datein}}</view>
+            </picker>
+          </view>
+          <view>入住日期</view>
+          <view class='iconnum'>{{time}}天</view>
+        </view>
+        <view class='flex3 iconrit'>
+          <view class='iconfont1'>
+            <picker mode="date" start="{{start}}" end="{{end}}" bindchange="bindDateChange2">
+              <view class="iconfont1" style='color:{{color}}'>{{dateout}}</view>
+            </picker>
+          </view>
+          <view>退房日期</view>
+        </view>
+      </view>
+
+
+    </view>
+  </view>
+
+  <view class='osection'>
+    <view class="marry">
+      <view class="proitem">
+        <view id="0" style='color:{{color}};border-bottom:2rpx solid {{color}}' bindtap="tabClick" wx:if="{{activeIndex==0}}">{{luntext[0]}}</view>
+        <view id="0" bindtap="tabClick" wx:if="{{activeIndex==1||activeIndex==2}}">{{luntext[0]}}</view>
+        <view id="1" style='color:{{color}};;border-bottom:2rpx solid {{color}}' bindtap="tabClick" wx:if="{{activeIndex==1}}">{{luntext[1]}}</view>
+        <view id="1" bindtap="tabClick" wx:if="{{activeIndex==0||activeIndex==2}}">{{luntext[1]}}</view>
+        <view id="2" style='color:{{color}};border-bottom:2rpx solid {{color}}' bindtap="tabClick" wx:if="{{activeIndex==2}}">{{luntext[2]}}</view>
+        <view id="2" bindtap="tabClick" wx:if="{{activeIndex==1||activeIndex==0}}">{{luntext[2]}}</view>
+      </view>
+    </view>
+  </view>
+  <view class='roomlist' wx:for="{{room}}" wx:if="{{activeIndex==0}}">
+    <view class='roombox'>
+      <image bindtap='room_info' mode='aspectFill' data-id='{{item.id}}' data-price='{{item.price}}' class='roomleft' src='{{url}}{{item.logo}}'></image>
+      <view class='roomright flex5'>
+        <view class='flex_bet roomtop'>
+          <view class='roomname'>{{item.name}}</view>
+          <view class='roomfont1' style='color:{{color}}'>¥{{item.cost}}</view>
+        </view>
+        <view class='flex_bet roombot'>
+          <view>
+            <view>剩余:{{item.room_num}}间</view>
+            <view>床型\n{{item.size}}</view>
+            <view>可住人数:{{item.people}}</view>
+          </view>
+          <view class='roomyuding' wx:if="{{item.state==1}}" bindtap='order' style='background:{{color}}'>
+              <button class='users' formType="submit" open-type='getUserInfo' bindgetuserinfo="bindgetuserinfo" data-id='{{item.id}}' data-classify="{{item.classify}}" data-cost='{{item.cost}}' data-rz_time='{{item.rz_time}}'>预订</button>
+          </view>
+          <view class='roomyuding' wx:if="{{item.state==2}}" style='background:#ccc'>满员</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='hotel_info' wx:if="{{activeIndex==1}}">
+    <view class='hotel_title'>{{platform.jd_custom}}详情</view>
+    <view class='info_child'>
+      <view>{{platform.jd_custom}}名称：{{hotel.name}}</view>
+      <view bindtap='sele_address'>{{platform.jd_custom}}地址：{{hotel.address}}</view>
+      <view bindtap='call_phone'>联系电话：{{hotel.tel}}</view>
+      <view>办理时间：{{hotel.handle}}</view>
+    </view>
+    <view class='hotel_title'>{{platform.jd_custom}}服务</view>
+    <view class='hotel_service'>
+      <view wx:if="{{hotel.wake==1}}">
+        <view class='rel'>
+          <image class='ab udlr' mode='aspectFit' src='../img/service_info/naozhong@3x.png'></image>
+        </view>
+        <view>叫醒服务</view>
+      </view>
+      <view wx:if="{{hotel.wifi==1}}">
+        <view class='rel'>
+          <image class='ab udlr' mode='aspectFit' src='../img/service_info/wifi@2x.png'></image>
+        </view>
+        <view>免费wifi</view>
+      </view>
+      <view wx:if="{{hotel.water==1}}">
+        <view class='rel'>
+          <image class='ab udlr' mode='aspectFit' src='../img/service_info/warter.png'></image>
+        </view>
+        <view>热水</view>
+      </view>
+      <view wx:if="{{hotel.park==1}}">
+        <view class='rel'>
+          <image class='ab udlr' mode='aspectFit' src='../img/service_info/tingche@2x.png'></image>
+        </view>
+        <view>停车</view>
+      </view>
+      <view wx:if="{{hotel.breakfast==1}}">
+        <view class='rel'>
+          <image class='ab udlr' mode='aspectFit' src='../img/service_info/foor.png'></image>
+        </view>
+        <view>早餐</view>
+      </view>
+      <view wx:if="{{hotel.unionPay==1}}">
+        <view class='rel'>
+          <image class='ab udlr' mode='aspectFit' src='../img/service_info/yinlian@3x.png'></image>
+        </view>
+        <view>银联</view>
+      </view>
+      <view wx:if="{{hotel.gym==1}}">
+        <view class='rel'>
+          <image class='ab udlr' mode='aspectFit' src='../img/service_info/jianshengf@2x.png'></image>
+        </view>
+        <view>健身房</view>
+      </view>
+      <view wx:if="{{hotel.boardroom==1}}">
+        <view class='rel'>
+          <image class='ab udlr' mode='aspectFit' src='../img/service_info/huiyishi@2x.png'></image>
+        </view>
+        <view>会议室</view>
+      </view>
+    </view>
+    <view class='hotel_title'>{{platform.jd_custom}}政策</view>
+    <view class='hotel_policy'>
+      <rich-text nodes="{{hotel.policy}}"></rich-text>
+    </view>
+    <view class='hotel_title'>{{platform.jd_custom}}简介</view>
+    <view class='hotel_policy'>
+      <rich-text nodes="{{hotel.introduction}}"></rich-text>
+    </view>
+  </view>
+  <!--酒店评价  -->
+  <view class='none_order' wx:if="{{assess_list.length==0&&activeIndex==2}}">
+    <image mode='aspectFill' src='../img/meiyoupinglun.png'></image>
+    <view>暂无评论</view>
+  </view>
+  <view class='hotel_evaluate' wx:if="{{activeIndex==2}}" wx:for="{{assess_list}}" wx:for-item="itemName">
+    <view class='evaluate_head'>
+      <view class='rel'>
+        <image mode='aspectFill' src='{{itemName.logo}}' class='ab ud'></image>
+      </view>
+      <view class='user'>
+        <view class='gobyndsingle'>{{itemName.name}}</view>
+        <view>{{itemName.time}}</view>
+      </view>
+    </view>
+    <view class='evaluate_content'>
+      <text>{{itemName.content}}</text>
+    </view>
+    <view class='evaluate_content' wx:if="{{itemName.img.length>=1}}">
+      <view wx:for="{{itemName.img}}" bindtap='previewImage' id="{{itemName.id}}" data-index="{{index}}">
+        <image mode='aspectFill' src='{{url}}{{item}}'></image>
+      </view>
+    </view>
+    <view class='evaluate_content' style='background:#f9f9f9;' wx:if="{{itemName.reply!=''}}">
+      <text>商家回复：{{itemName.reply}}</text>
+    </view>
+  </view>
+  <view class='whole_evaluate' wx:if="{{activeIndex==2&&assess_list.length>=5}}" bindtap='all_comment'>全部评论</view>
+</view>
+</form>

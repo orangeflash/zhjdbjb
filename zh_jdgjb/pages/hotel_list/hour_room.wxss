@@ -1,0 +1,83 @@
+/* zh_jdgjb/pages/hotel_list/hour_room.wxss */
+.head{
+  padding: 20rpx;
+  background: orange;
+  color: #fff;
+}
+.head>view:nth-child(1){
+  padding: 40rpx 0 20rpx 0;
+  font-size: 32rpx;
+}
+.head>view:nth-child(2){
+  font-size: 24rpx;
+}
+.head>view:nth-child(3){
+  font-size: 24rpx;
+  padding: 10rpx 0;
+}
+.body{
+  padding: 0 20rpx;
+  margin-top: 20rpx;
+  height: 300rpx;
+}
+.body>view{
+  background: #fff;
+  padding: 20rpx 20rpx;
+  border-bottom: 2rpx solid #e5e5e5;
+}
+.body>view:last-child{
+  border: none;
+}
+.body>view view{
+  display:inline-block;
+  vertical-align: middle; 
+  box-sizing: border-box;
+}
+.body>view view:nth-child(1){
+  width: 30%;
+  color: #999;
+}
+.body>view view:nth-child(2){
+  width: 60%;
+}
+.body>view view:nth-child(3){
+  width: 10%;
+  text-align: center;
+}
+.body>view view input{
+  width: 100%;
+}
+button{
+  width:60%;
+  display: inline-block;
+  vertical-align: middle;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 30rpx;
+  color: #fff;
+  background: orange;
+  border-radius: 0;
+  margin: 0;
+}
+button::after{
+  border: none;
+}
+.button{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 90rpx;
+}
+.button>view{
+  vertical-align: middle;
+  line-height: 90rpx;
+  display: inline-block;
+  width: 40%;
+  text-align: center;
+  height: 90rpx;
+  background: #fff;
+  color: orange;
+}
+.button>view text{
+  font-size: 40rpx;
+}
