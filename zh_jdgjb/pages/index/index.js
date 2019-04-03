@@ -2,11 +2,13 @@
 //获取应用实例
 const app = getApp()
 const util = require('../../utils/util.js')
-var location = ''
+const QQMapWX = require('../../lib/qqmap-wx-jssdk.js');
+var location = '',qqmapsdk;
 Page({
     data: {
         bomb: false,
-        showLoading: true
+        showLoading: true,
+        weizhi:'附近',
     },
     onLoad: function(options) {
         var that = this;
@@ -155,11 +157,17 @@ Page({
             'url': 'entry/wxapp/GetSystem',
             'cachetime': '0',
             success: function(res) {
-
                 wx.setStorageSync('platform', res.data)
                 wx.setNavigationBarTitle({
                     title: res.data.pt_name,
                 })
+              // 实例化API核心类
+              qqmapsdk = new QQMapWX({
+                key: res.data.map_key
+              });
+              if (res.data.type == '2') {
+                that.dwCity()
+              }
             },
             complete: res => {
                 console.log(res)
@@ -334,6 +342,12 @@ Page({
     },
     // 跳转酒店列表-距离最近
     location: function(e) {
+      if (this.data.platform.openCity == '1'){
+        wx.navigateTo({
+          url: '../switchcity/switchcity?cityName='+this.data.weizhi,
+        })
+        return
+      }
         wx.showLoading({
             title: '搜索附近酒店',
         })
@@ -387,6 +401,31 @@ Page({
 
     //   })
     // },
+    dwCity(){
+      let that=this;
+      wx.getLocation({
+        type: 'wgs84',
+        success: res=>{
+          let latitude = res.latitude
+          let longitude = res.longitude
+          // 调用接口
+          qqmapsdk.reverseGeocoder({
+            location: {
+              latitude: latitude,
+              longitude: longitude
+            },
+            coord_type: 1,
+            success: function (res) {
+              that.setData({
+                weizhi: res.result.address_component.city,
+              })
+              console.log(res)
+            }
+          })
+        }
+      })
+      console.log('dwcity')
+    },
     onShow: function() {
         // console.log('页面显示')
         var that = this

@@ -23,7 +23,7 @@
         </view>
         <view class='flex1 isearchrit' bindtap='location'>
           <image class='isearchimg2' src='../img/didian.png'></image>
-          <view  style='color:{{color}}'>附近</view>
+          <view  style='color:{{color}}'>{{weizhi}}</view>
         </view>
       </view>
       <view class='icontent'>

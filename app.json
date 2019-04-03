@@ -45,6 +45,7 @@
     "zh_jdgjb/pages/distribution/partner",
     "zh_jdgjb/pages/recharge/recharge",
     "zh_jdgjb/pages/recharge/jilu",
+    "zh_jdgjb/pages/switchcity/switchcity",
     "zh_jdgjb/pages/login"
   ],
   "window": {
