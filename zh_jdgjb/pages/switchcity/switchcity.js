@@ -56,6 +56,7 @@ Page({
     qqmapsdk = new QQMapWX({
       key: wx.getStorageSync('platform').map_key
     });
+    this.getLocation();
   },
   getLocation: function () {
     var that = this;
