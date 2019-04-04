@@ -7,7 +7,8 @@
           <swiper-item>
             <image bindtap='skip' data-appid='{{item.appid}}' data-wb_src='{{item.wb_src}}' data-src='{{item.src}}' mode='aspectFill' src="{{url}}{{item.logo}}" class="slide-image"/>
           </swiper-item>
-        </block>提      </swiper> 
+        </block>
+      </swiper> 
       <view class='shanchu' bindtap='guanbi'>×</view>
     </view>
   </view> 

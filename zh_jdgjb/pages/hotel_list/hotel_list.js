@@ -131,7 +131,7 @@ Page({
     app.util.request({
       'url': 'entry/wxapp/JdList',
       'cachetime': '0',
-      data: { page: page },
+      data: { page: page, cityName:wx.getStorageSync('cityName') },
       success: function (res) {
         if (res.data.length > 0) {
           that.setData({

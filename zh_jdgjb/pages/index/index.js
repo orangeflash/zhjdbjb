@@ -158,6 +158,7 @@ Page({
             'cachetime': '0',
             success: function(res) {
                 wx.setStorageSync('platform', res.data)
+                wx.setStorageSync('cityName', '')
                 wx.setNavigationBarTitle({
                     title: res.data.pt_name,
                 })
@@ -403,6 +404,9 @@ Page({
     // },
     dwCity(){
       let that=this;
+      wx.showLoading({
+        title: '定位中',
+      })
       wx.getLocation({
         type: 'wgs84',
         success: res=>{
@@ -419,6 +423,8 @@ Page({
               that.setData({
                 weizhi: res.result.address_component.city,
               })
+              wx.setStorageSync('cityName', res.result.address_component.city)
+              wx.hideLoading()
               console.log(res)
             }
           })

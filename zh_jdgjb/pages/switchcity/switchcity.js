@@ -1,5 +1,7 @@
 const city = require('../../utils/city.js');
 const app = getApp();
+const QQMapWX = require('../../lib/qqmap-wx-jssdk.js');
+let qqmapsdk;
 Page({
   data: {
     searchLetter: [],
@@ -27,7 +29,8 @@ Page({
     const winHeight = sysInfo.windowHeight;
     const itemH = winHeight / searchLetter.length;
     let tempArr = [];
-
+    //
+    app.getSystem(this)
     searchLetter.map(
       (item,index) => {
         // console.log(item);
@@ -41,13 +44,77 @@ Page({
     );
     // console.log(tempArr);
     this.setData({
+      dqwz: option.cityName,
       city: option.cityName,
+      color: wx.getStorageSync('platform').color,
       winHeight: winHeight,
       itemH: itemH,
       searchLetter: tempArr,
-      cityList: cityList
+      cityList: cityList,
     });
-
+    // 实例化API核心类
+    qqmapsdk = new QQMapWX({
+      key: wx.getStorageSync('platform').map_key
+    });
+  },
+  getLocation: function () {
+    var that = this;
+    wx.showToast({
+      title: '定位中',
+      icon:'loading',
+    })
+    wx.getLocation({
+      type: 'wgs84',
+      success: function (res) {
+        console.log(res)
+        // 调用接口
+        qqmapsdk.reverseGeocoder({
+          coord_type: 1,
+          location: {
+            latitude: res.latitude,
+            longitude: res.longitude
+          },
+          success: function (res) {
+            console.log(res);
+            wx.hideToast()
+            that.setData({
+              dqwz: res.result.address_component.city,
+            })
+            // var dq = that.data.region
+            // var radioItems = [], dwmore = that.data.System.dw_more;
+            // console.log(dq, dwmore)
+            // if (dwmore == '2') {
+            //   for (let i = 1; i < dq.length; i++) {
+            //     var obj = {}
+            //     if (dq[i] == '县') {
+            //       obj.name = dq[i - 1], obj.value = i;
+            //     }
+            //     else {
+            //       obj.name = dq[i], obj.value = i;
+            //     }
+            //     radioItems.push(obj)
+            //   }
+            // }
+            // if (dwmore == '1') {
+            //   var obj = {}
+            //   obj.name = dq[2], obj.value = 2;
+            //   radioItems.push(obj)
+            // }
+            // console.log(radioItems)
+            // radioItems[0].checked = true
+            // that.setData({
+            //   radioItems: radioItems,
+            // })
+          },
+          fail: function (res) {
+            console.log(res);
+          },
+          complete: function (res) {
+            console.log(res);
+          }
+        });
+      },
+    })
   },
   onReady: function () {
     // 生命周期函数--监听页面初次渲染完成
@@ -101,7 +168,18 @@ Page({
       })
     }, 500)
   },
-
+  //确定城市
+  getCity(e){
+    var pages = getCurrentPages(),prevPage = pages[pages.length - 2];
+    prevPage.setData({
+      weizhi: e.currentTarget.dataset.city,
+    })
+    wx.navigateBack({
+      
+    })
+    wx.setStorageSync('cityName', e.currentTarget.dataset.city)
+    console.log(e.currentTarget.dataset.city);
+  },
   //选择城市
   bindCity: function (e) {
     // console.log("bindCity");
@@ -109,11 +187,10 @@ Page({
     this.setData({
       county: '',
       city: e.currentTarget.dataset.city,
-      currentCityCode: e.currentTarget.dataset.code,
+      // currentCityCode: e.currentTarget.dataset.code,
       scrollTop: 0,
       completeList: [],
     })
-    this.selectCounty()
   },
 
   bindCounty: function(e) {
@@ -131,27 +208,6 @@ Page({
   },
   bindScroll: function (e) {
   //  console.log(e.detail)
-  },
-  selectCounty: function() {
-    console.log("正在定位区县");
-    let code = this.data.currentCityCode
-    console.log(code);
-    const that = this;
-    wx.request({
-      url: `http://apis.map.qq.com/ws/district/v1/getchildren?&id=${code}&key=${config.key}`,
-      success: function(res) {
-        console.log(res.data.result[0]);
-        that.setData({
-          countyList: res.data.result[0],
-        })
-        console.log(that.data.countyList);
-        console.log("请求区县成功"+`http://apis.map.qq.com/ws/district/v1/getchildren?&id=${code}&key=${config.key}`);
-        console.log(res)
-      },
-      fail: function() {
-        console.log("请求区县失败，请重试");
-      }
-    })
   },
   bindBlur: function(e) {
     this.setData({

@@ -107,7 +107,7 @@
   border-radius: 15rpx;
   box-shadow: 5rpx 5rpx 10rpx #eee;
   padding: 30rpx 50rpx;
-  width: 68%;
+  width: 70%;
 }
 .isearch{
   border-bottom: 1rpx solid #eee;
@@ -120,17 +120,20 @@
   margin-right: 10rpx;
 }
 .isearchimg2{
+  min-width: 25rpx;
   width: 25rpx;
   height: 30rpx;
   margin-right: 10rpx;
 }
 .isearchleft{
-  width: 74%;
+  width: 64%;
   border-right: 1rpx solid #eee;
 }
 .isearchrit{
-  width: 25%;
+  width: 35%;
   color: #172A97;
+  box-sizing: border-box;
+  padding: 0 10rpx;
 }
 
 .icontent{
