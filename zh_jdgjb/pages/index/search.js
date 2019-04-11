@@ -26,7 +26,7 @@ Page({
       app.util.request({
         'url': 'entry/wxapp/JdList',
         'cachetime': '0',
-        data: { keywords: value },
+        data: { keywords: value, pagesize:100 },
         success: function (res) {
           that.setData({
             hotel: res.data

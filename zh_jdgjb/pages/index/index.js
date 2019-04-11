@@ -436,6 +436,9 @@ Page({
         // console.log('页面显示')
         var that = this
         that.date()
+        that.setData({
+          weizhi: wx.getStorageSync('cityName'),
+        })
         app.getUserInfo(function(userInfo) {
             that.setData({
                 users: userInfo

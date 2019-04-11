@@ -6,7 +6,17 @@
   <view class='bottom'>
     <view class='flex3'>
       <view class='indexbox'>
-        <view class='isearch'>
+        <view wx:if="{{platform.type==2}}" class='isearch'>
+          <view class='flex_center isearchleft'>
+            <image class='isearchimg' src='../img/sousuo.png'></image>
+            <input disabled='true' bindtap='search' placeholder='请输入{{platform.jd_custom}}名/关键字' type='text'></input>
+          </view>
+          <view class='flex1 isearchrit' bindtap='location'>
+            <image class='isearchimg2' src='../img/didian.png'></image>
+            <view style='color:{{color}}'>{{weizhi}}</view>
+          </view>
+        </view>
+        <view wx:else class='isearch'>
           <view class='flex_center'>
             <image class='isearchimg' src='../img/sousuo.png'></image>
             <input disabled='true' bindtap='search' placeholder='请输入{{platform.jd_custom}}名/关键字' type='text'></input>

@@ -175,10 +175,13 @@ Page({
     prevPage.setData({
       weizhi: e.currentTarget.dataset.city,
     })
+    wx.setStorageSync('cityName', e.currentTarget.dataset.city)
+    if (prevPage.route == "zh_jdgjb/pages/hotel_list/hotel_list"){
+      prevPage.refresh()
+    }
     wx.navigateBack({
       
     })
-    wx.setStorageSync('cityName', e.currentTarget.dataset.city)
     console.log(e.currentTarget.dataset.city);
   },
   //选择城市

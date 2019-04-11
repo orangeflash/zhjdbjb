@@ -14,7 +14,14 @@ Page({
     hotel: [],
     timg: false
   },
-
+  location: function (e) {
+    if (this.data.platform.openCity == '1') {
+      wx.navigateTo({
+        url: '../switchcity/switchcity?cityName=' + this.data.weizhi,
+      })
+      return
+    }
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -42,6 +49,7 @@ Page({
     var platform = wx.getStorageSync('platform')
     that.setData({
       platform: platform,
+      weizhi: wx.getStorageSync('cityName'),
       lat1: wx.getStorageSync("latitude"),
       lng1: wx.getStorageSync("longitude")
     })
