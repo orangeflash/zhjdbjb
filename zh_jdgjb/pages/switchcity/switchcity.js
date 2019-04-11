@@ -177,6 +177,10 @@ Page({
     })
     wx.setStorageSync('cityName', e.currentTarget.dataset.city)
     if (prevPage.route == "zh_jdgjb/pages/hotel_list/hotel_list"){
+      prevPage.setData({
+        page: 1,
+        hotel: [],
+      })
       prevPage.refresh()
     }
     wx.navigateBack({
