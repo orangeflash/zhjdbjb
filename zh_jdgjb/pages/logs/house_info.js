@@ -274,7 +274,7 @@ Page({
     var dateday = price[index].dateday
     dateday = dateday.replace('月', "-")
     dateday = dateday.replace('日', " ")
-    dateday = '2018-' + dateday
+    dateday = new Date().getFullYear()+'-' + dateday
     price[index].mprice = value
     app.util.request({
       url: 'entry/wxapp/EditRoomPrice',
@@ -305,7 +305,7 @@ Page({
     var dateday = room_num[index].dateday
     dateday = dateday.replace('月', "-")
     dateday = dateday.replace('日', " ")
-    dateday = '2018-' + dateday
+    dateday = new Date().getFullYear() + '-' + dateday
     app.util.request({
       url: 'entry/wxapp/EditRoomNum',
       data: {
