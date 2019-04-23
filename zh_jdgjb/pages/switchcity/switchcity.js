@@ -58,6 +58,11 @@ Page({
     });
     this.getLocation();
   },
+  close(){
+    this.setData({
+      completeList: [],
+    })
+  },
   getLocation: function () {
     var that = this;
     wx.showToast({
@@ -217,17 +222,44 @@ Page({
   bindScroll: function (e) {
   //  console.log(e.detail)
   },
-  bindBlur: function(e) {
-    this.setData({
-      inputName: ''
-    })
+  toUnicodeFun(data) {
+    if (data == '' || typeof data == 'undefined') return '请输入汉字';
+    var str = '';
+    for (var i = 0; i < data.length; i++) {
+      str += "\\u" + data.charCodeAt(i).toString(16);
+    }
+    return str;
   },
+  // bindconfirm(e){
+  //   console.log(e.detail.value, this.toUnicodeFun(e.detail.value));
+  // },
+  // bindBlur: function(e) {
+  //   this.setData({
+  //     inputName: ''
+  //   })
+  // },
   bindKeyInput: function(e) {
-    console.log(e.detail.value);
+    console.log(e.detail.value, e.detail.value.length, this.toUnicodeFun(e.detail.value));
+    let searcharr = city.cityObj.filter(
+      item => {
+        let str = item.city.substring(0, e.detail.value.length)
+        return str.indexOf(e.detail.value)>-1
+      }
+    );
+    if (e.detail.value.trim().length==0){
+      this.setData({
+        completeList: [],
+      })
+      return
+    }
     this.setData({
-      inputName: e.detail.value
+      completeList: searcharr,
     })
-    this.auto()
+    console.log(searcharr)
+    // this.setData({
+    //   inputName: e.detail.value
+    // })
+    // this.auto()
   },
   auto: function() {
     let inputSd = this.data.inputName

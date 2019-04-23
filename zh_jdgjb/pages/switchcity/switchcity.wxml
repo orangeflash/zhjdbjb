@@ -1,6 +1,11 @@
-<!-- <view class="input">
-<input bindinput="bindKeyInput" bindblur="bindBlur" placeholder="输入城市名或拼音查询" placeholder-style="font-size: 30rpx"  value="{{inputName}}"></input>
-</view> -->
+<view class="input">
+<input confirm-type="search" bindinput='bindKeyInput' placeholder="输入城市名查询" placeholder-style="font-size: 30rpx"></input>
+</view>
+<view bindtap='close' wx:if="{{completeList.length}}" class='search-view'>
+</view>
+<view wx:if="{{completeList.length}}" class='search-con'>
+  <view wx:for="{{completeList}}" wx:key="index" bindtap="bindCity" data-city="{{item.city}}" data-code="{{item.code}}" class="search-list">{{item.city}}</view>
+</view>
 <view class="container">
 <view class="searchLetter touchClass">
   <view class="thishotText" bindtap="hotCity" style='color:{{color}};'>
@@ -10,11 +15,11 @@
   <view wx:for="{{searchLetter}}" style="color:{{color}};font-size:20rpx;" wx:key="index" data-letter="{{item.name}}" catchtouchend="clickLetter" >{{item.name}}</view>
 </view>
 
-<block wx:if="{{isShowLetter}}">
+<!-- <block wx:if="{{isShowLetter}}">
   <view class="showSlectedLetter">
     {{toastShowLetter}}
   </view>
-</block>
+</block> -->
 
 
 <scroll-view scroll-y="true" style="height:{{winHeight}}px" bindscroll="bindScroll"
@@ -29,9 +34,9 @@
   </view>
 </view>
 
-<ul wx:for="{{completeList}}" wx:key="index" class="ul">
+<!-- <ul wx:for="{{completeList}}" wx:key="index" class="ul">
   <li bindtap="bindCity" data-city="{{item.city}}" data-code="{{item.code}}" class="li">{{item.city}}</li>
-</ul>
+</ul> -->
 
 
  <!-- <view class="hotcity-common">选择区县：{{county}}</view>

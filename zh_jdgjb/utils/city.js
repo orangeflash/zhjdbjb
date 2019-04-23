@@ -48,5 +48,6 @@ function pushCity() {
 module.exports = {
   searchLetter: searchLetter,
   cityList: cityList,
-  cityObjs: cityObjs
+  cityObjs: cityObjs,
+  cityObj: cityObj,
 }
