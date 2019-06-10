@@ -140,8 +140,9 @@ Page({
     var price = that.data.price
     // var money = e.currentTarget.money
     var cost = e.currentTarget.dataset.money
-    var id = e.currentTarget.id
+    var id = e.currentTarget.id, info = this.data.unreceive.find(item => item.id == id), today = app.today();
     var condition = e.currentTarget.dataset.condition
+    console.log(id, info,today)
     if (condition==''){
       var num =0
     }else{
@@ -150,7 +151,13 @@ Page({
     
     if (Number(price) < Number(num)) {
       wx.showToast({
-        title: '不到使用条件',
+        title: '未满足使用条件',
+        icon:'none'
+      })
+    } else if (today<info.start_time){
+      wx.showToast({
+        title: '请在有效期内使用',
+        icon: 'none'
       })
     } else if(price!=null||num!=null){
       var pages = getCurrentPages();
