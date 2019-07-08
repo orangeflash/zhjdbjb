@@ -1,9 +1,11 @@
 
 <view class='backgrod' wx:if="{{backgrod==true}}">
     <view class='ab' bindtap='Preservation'></view>
-    <view class='ab udlr'>
-        邀请朋友扫码获取佣金
-        <image mode='aspectFill' src='data:image/png;base64,{{code}}'></image>
+    <view class='ab udlr' bindtap='previewimg'>
+        <view>邀请朋友扫码获取佣金</view>
+        <!-- <image mode='aspectFill' src='data:image/png;base64,{{code}}'></image> -->
+        <image mode='aspectFill' src='{{code}}'></image>
+        <view>预览保存</view>
     </view>
 </view>
 <view class='head rel' style='background:{{color}}'>

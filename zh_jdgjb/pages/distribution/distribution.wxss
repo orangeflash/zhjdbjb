@@ -236,7 +236,7 @@
 }
 .backgrod>view:nth-child(2){
   width: 50%;
-  height: 400rpx;
+  height: 460rpx;
   background: #fff;
   border-radius: 15rpx;
   z-index: 555555555555;

@@ -9,7 +9,11 @@ Page({
     share:false,
     backgrod:false
   },
-
+  previewimg: function () {
+    wx.previewImage({
+      urls: [this.data.code],
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
