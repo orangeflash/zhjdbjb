@@ -67,12 +67,21 @@ margin-top: 100rpx;
  height: 210px; 
  overflow-y: scroll; /*超出父盒子高度可滚动*/ 
 } 
+.btn_no{ 
+ padding: 25rpx; 
+ font: 30rpx "microsoft yahei"; 
+ text-align: center; 
+ margin: 5rpx 0 40rpx;
+ background: #EFEFEF; 
+ width: 28vw;border-radius: 50rpx;
+ color: #000; 
+}
 .btn_ok{ 
  padding: 25rpx; 
  font: 30rpx "microsoft yahei"; 
  text-align: center; 
  margin: 5rpx 0 40rpx;
  background: #f44444; 
- width: 55vw;border-radius: 50rpx;
+ width: 28vw;border-radius: 50rpx;
  color: #fff; 
 }

@@ -53,7 +53,7 @@
     </view>
   </view>
    <view class='footban'></view> 
-   <view class='ibanner'>
+   <view class='ibanner' wx:if="{{nav.length}}">
     <view class='flex3' wx:for="{{nav}}" wx:key="*this" bindtap='skip' data-appid='{{item.appid}}' data-wb_src='{{item.wb_src}}' data-src='{{item.src}}'>
       <image mode='aspectFill' class='ibanimg' src='{{url}}{{item.logo}}'></image>
       <view class='ibanzname gobyndsingle'>{{item.title}}</view>

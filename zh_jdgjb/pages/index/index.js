@@ -142,13 +142,13 @@ Page({
             'url': 'entry/wxapp/GetNav',
             'cachetime': '0',
             success: function(res) {
-                if (res.data.length >= 5) {
-                    var nav = res.data.splice(res.data.length - 5, 5)
-                } else {
-                    var nav = res.data
-                }
+                // if (res.data.length >= 5) {
+                //     var nav = res.data.splice(res.data.length - 5, 5)
+                // } else {
+                //     var nav = res.data
+                // }
                 that.setData({
-                    nav: nav
+                    nav: res.data
                 })
             },
         })
@@ -220,6 +220,39 @@ Page({
             that.Membership()
         }
         if (src != '' && src != '../register/register') {
+          if (src == '../distribution/distribution') {
+            // 查看是否是分销商
+            app.util.request({
+              url: 'entry/wxapp/MyDistribution',
+              data: { user_id: getApp().user_info.user_id },
+              success: res => {
+                if (res.data == false) {
+                  wx.navigateTo({
+                    url: '../distribution/examine',
+                  })
+
+                } else {
+                  if (res.data.state == 1) {
+                    wx.showModal({
+                      title: '温馨提示',
+                      content: '系统正在审核中，请稍后再试',
+                    })
+                  } else if (res.data.state == 2) {
+                    wx.navigateTo({
+                      url: '../distribution/distribution',
+                    })
+                  } else if (res.data.state == 3) {
+                    wx.showModal({
+                      title: '温馨提示',
+                      content: '您的申请已被拒绝',
+                    })
+                  }
+                }
+
+              }
+            })
+            return
+          }
             var id = src.replace(/[^0-9]/ig, "");
             var src = src.replace(/(\d+|\s+)/g, "");
             wx.navigateTo({

@@ -27,14 +27,22 @@ Page({
        delta:1
      })
     }else{
-      wx.showModal({
-        title: '温馨提示',
-        content: '您拒绝了信息授权，将无法正常使用小程序',
+      wx.navigateBack({
+
       })
+      // wx.showModal({
+      //   title: '温馨提示',
+      //   content: '您拒绝了信息授权，将无法正常使用小程序',
+      // })
     }
     // wx.reLaunch({
     //   url: '../index/index',
     // })
+  },
+  qx() {
+    wx.navigateBack({
+
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

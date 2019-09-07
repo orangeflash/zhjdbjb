@@ -86,7 +86,7 @@ App({
 
                       var url = currentPage.route //当前页面url
                       var options = currentPage.options //如果要获取url中所带的参数可以查看options
-                      if (url !='zh_jdgjb/pages/index/index'){
+                      if (url != 'zh_jdgjb/pages/index/index' && url != 'zh_jdgjb/pages/logs/logs'){
                         wx.navigateTo({
                           url: '../login',
                         })

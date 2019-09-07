@@ -23,5 +23,8 @@
   <view class="sq_title1">为了提供更好的服务</view>
   <view class="sq_title1">请在稍后的提示框中点击“允许”</view>
   <image src='img/sqimg.png'></image>
-  <button  open-type='getUserInfo' bindgetuserinfo='bindGetUserInfo' style='background:{{color}}' class="btn_ok" bindtap="yczz">我知道了</button>
+  <view style="width:100%;display:flex;justify-content: space-around;align-items: center;">
+    <view class="btn_no" bindtap="qx">取消</view>
+    <button open-type='getUserInfo' bindgetuserinfo='bindGetUserInfo' style='background:{{color}}' class="btn_ok" bindtap="yczz">确认</button>
+  </view>
 </view>
