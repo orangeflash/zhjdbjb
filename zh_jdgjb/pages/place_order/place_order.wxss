@@ -39,12 +39,12 @@ page {
   height: 35rpx;
   display: block;
   float: left;
-  padding: 5rpx 0 0 0;
+  padding: 5rpx 10rpx 0 0;
 }
 
 .hotel_info view {
   float: left;
-  width: 90%;
+  width: 92%;
   text-indent: 8rpx;
 }
 
@@ -53,7 +53,7 @@ page {
 }
 
 .hotel_time>view {
-  width: 40%;
+  width:46%;
   display: inline-block;
 }
 
