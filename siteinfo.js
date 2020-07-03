@@ -1,10 +1,10 @@
 var siteInfo = {
   'title': '',
-  'uniacid': '12',
+  'uniacid': '3',
   'acid': '12',
   'multiid': '0',
   'version': '1.0',
-    'siteroot': 'https://zfb.zhycms.com/app/index.php',
+    'siteroot': 'https://zhycms.com',
   'design_method': '3',
   'redirect_module': '',
   'template': ''

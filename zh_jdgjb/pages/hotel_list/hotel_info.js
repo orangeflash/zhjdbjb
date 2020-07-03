@@ -304,6 +304,7 @@ Page({
     })
   },
   formSubmit:function(e){
+    app.util.requestSM('order').then(res=>{
     var that = this
     var form_d = e.detail.formId
     // wx.showModal({
@@ -339,6 +340,7 @@ Page({
        
       }
     }
+  })
   },
   hotel_in:function(e){
     wx.navigateTo({
